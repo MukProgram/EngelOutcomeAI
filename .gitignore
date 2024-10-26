@@ -2,6 +2,6 @@
 **/.ipynb_checkpoints
 
 venv
+.env
 env
-
 
