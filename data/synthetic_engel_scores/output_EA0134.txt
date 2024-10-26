@@ -1,0 +1,19 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IC.
+
+The reasoning is:
+
+- She has been seizure-free for 2 years on levetiracetam, meeting criteria for Engel class I (Free of disabling seizures)
+- She initially had disabling seizures after starting medications, but has now been free of disabling seizures for at least 2 years, meeting criteria for subclass IC
+- There is no evidence she has had any simple partial or generalized seizures recently, and no mention of nocturnal seizures, so subclasses IA, IB, ID or IID do not apply
+- Since she has been seizure-free for 2 years, subclasses IIA-IIC, IIIA-IIIB and IVA-IVC also do not apply
+
+Therefore, the most appropriate Engel score based on the history provided is:
+
+```json
+{
+  "score": "IC",
+  "reasoning": "She has been seizure-free for 2 years on levetiracetam, meeting criteria for Engel class I. She initially had disabling seizures after starting medications, but has now been free of disabling seizures for at least 2 years, meeting criteria for subclass IC."
+}
+```
+
+There is no evidence to support any other Engel scores based on the clinical note provided. Please let me know if you need any clarification or have additional questions!

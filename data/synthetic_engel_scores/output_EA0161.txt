@@ -1,0 +1,26 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIC (One-Eye-See).
+
+The reasoning is as follows:
+
+- The patient has a diagnosis of generalized epilepsy with both absences and generalized tonic-clonic seizures (GTCS).
+
+- She continues to have absence seizures about once a week, which are disabling. These qualify as "disabling seizures after surgery" per the IIC criteria.
+
+- She was initially seizure-free after starting levetiracetam, but now has rare GTCS, about every 2 months. This fits the IIC criteria of "More than rare disabling seizures after surgery, but rare seizures for at least 2 years."
+
+- The seizures are not fully controlled but there has been a worthwhile reduction in frequency, especially of GTCS, after medication changes. 
+
+- No other Engel class fits the description provided. She has had disabling seizures persistently, though less frequently, so does not qualify for classes I or II. There has been more than just "worthwhile improvement" so class III does not apply. Class IV indicates no worthwhile improvement, which is not the case here.
+
+Therefore, I would assign this patient an Engel score of IIC based on the information provided.
+
+Here is the output in JSON format:
+
+```json
+{
+  "score": "IIC",
+  "reasoning": "The patient continues to have disabling absence seizures about once a week. She has also had rare GTCS, about every 2 months, after initial seizure freedom on levetiracetam. This fits the IIC criteria of more than rare disabling seizures after treatment changes, but rare seizures for at least 2 years." 
+}
+```
+
+Let me know if you need any clarification or have additional questions!

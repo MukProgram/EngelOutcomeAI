@@ -1,0 +1,10 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is experiencing rare disabling seizures since surgery, specifically complex partial seizures 4-5 times per year. This fits the criteria for Engel score IIB - 'Rare disabling seizures since surgery'. While the seizures are not high in frequency, they are described as disabling, with the patient becoming unresponsive during the seizures. There is no mention of a prolonged seizure-free period greater than 2 years, so scores IIIB and IIIC do not apply. The patient does not appear to fit criteria for scores IA, IB, IC, ID, IIA, IIC, IID, IIIA, IVA, IVB, or IVC." 
+}
+```
+
+The patient fits criteria IIB most closely based on the information provided. There is only one clear Engel score for this patient based on the clinical note. If additional information was provided that brought other scores into consideration, I would list those as alternative possibilities with reasoning. But with the information given, IIB is the appropriate Engel outcome score.

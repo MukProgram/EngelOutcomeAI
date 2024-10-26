@@ -1,0 +1,14 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is experiencing rare disabling seizures since the initial onset several years ago. Specifically, he has had on average one seizure per year since age 16, with a total of 3 seizures in 2018. These seizures involve generalized convulsions with stiffening, shaking, breathing changes, and prolonged postictal states. While not completely seizure-free, this pattern of infrequent generalized convulsions fits the criteria for Engel score IIB - Rare disabling seizures since surgery."
+}
+```
+
+The patient does not qualify for Engel class I since he continues to have some disabling seizures. Classes III and IV also do not apply since he has experienced a worthwhile reduction in seizures compared to the initial onset, rather than no worthwhile improvement. 
+
+Within class II, score IIA does not apply because he was not initially seizure-free. Score IIC also does not apply because he has not had seizure freedom for at least 2 years. Scores IID and IIE do not match his seizure semiology. Therefore, based on the occurrence of rare disabling generalized convulsions since the initial diagnosis, score IIB is the best fit.
+
+Let me know if you need any clarification or have additional questions!

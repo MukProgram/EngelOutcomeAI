@@ -1,0 +1,8 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIB.
+
+{
+  "score": "IIB",
+  "reasoning": "The patient had been seizure-free for 6 months, indicating a period of seizure control, but then experienced a cluster of disabling seizures over the weekend. This fits the criteria for Engel IIB - rare disabling seizures since surgery. While the note does not explicitly state the patient underwent surgery, the instructions said to ignore whether surgery occurred or not. The seizures are described as generalized convulsions lasting 2-3 minutes, which would be considered disabling. Since this recent cluster seems to be an isolated event after a 6 month seizure-free period, it would qualify as 'rare' disabling seizures."
+}
+
+I did not find evidence to support assigning multiple Engel scores to this patient based on the information provided. The seizure description and timeline fit most closely with an IIB classification. Let me know if you need any clarification or have additional questions!

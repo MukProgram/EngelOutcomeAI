@@ -1,0 +1,8 @@
+Based on the information provided in the clinical note, I would assign Helen an Engel score of IC.
+
+{
+  "score": "IC",
+  "reasoning": "Helen has been free of disabling seizures for 6 months, which meets the IC criteria of 'Some disabling seizures after surgery, but free of disabling seizures for at least 2 years'. The note states she has not had any collapses for 6 months, suggesting freedom from disabling seizures. While she does experience episodes of 'absences' and 'funny feelings', these are specifically stated to likely be non-epileptic events related to anxiety rather than epileptic seizures. Therefore I would score her as IC given the lack of disabling seizures for over 6 months despite the presence of some non-disabling seizure-like events."
+}
+
+No other Engel scores seem reasonably justified based on the information provided. There is no evidence of rare/disabling seizures (class II) or worthwhile seizure reduction (class III). And she has shown more than no appreciable change, ruling out class IV. So IC appears the most appropriate score. Please let me know if any clarification or additional reasoning would be helpful!

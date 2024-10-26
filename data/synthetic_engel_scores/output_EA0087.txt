@@ -1,0 +1,10 @@
+Based on the clinical note, here is the assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is having rare disabling seizures since starting treatment. Specifically, she is having 4 generalized tonic-clonic seizures over the past 3 weeks. This fits the criteria for Engel IIB: 'Rare disabling seizures since surgery'. Even though she has not had surgery, the criteria still applies to assessing her current seizure frequency and disability level. There is no evidence of a worthwhile seizure reduction or prolonged seizure-free intervals, so Engel III does not apply. The seizures also appear to be worsening in frequency rather than showing improvement, so Engel IV does not apply either. Therefore, based on the seizure frequency and lack of worthwhile improvement, Engel IIB is the most applicable score."
+}
+```
+
+The provided clinical note does not indicate multiple possible Engel scores, so only one score with reasoning is provided. Please let me know if you need any clarification or have additional questions!

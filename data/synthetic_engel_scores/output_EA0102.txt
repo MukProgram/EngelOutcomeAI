@@ -1,0 +1,10 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of 1A with the following reasoning:
+
+```json
+{
+  "score": "1A",
+  "reasoning": "The patient has been diagnosed with non-epileptic psychogenic seizures confirmed on EEG. The note states she has been seizure free for more than 5 years, indicating she is completely seizure free since the presumed 'surgery' which is likely when she had the diagnostic EEG. This fits the criteria for Engel score 1A."
+}
+```
+
+The note does not mention any seizures or anti-seizure medication changes in over 5 years, so 1A appears the most appropriate score based on the Engel criteria provided. There is no evidence to support any other possible scores. Please let me know if you need any clarification or have additional questions!

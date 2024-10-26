@@ -1,0 +1,10 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is having focal motor seizures affecting her left hand and arm every 2 weeks. She also had a focal to bilateral convulsive seizure 2 years ago. This frequency of disabling seizures indicates that the patient is having rare disabling seizures since surgery, meeting criteria for Engel IIB. More frequent disabling seizures would warrant Engel IIC, but the seizures are not frequent enough to qualify for that. There is no evidence of complete seizure freedom or prolonged seizure-free intervals to warrant Engel IA, IB, or IIIB. The information provided is most consistent with rare disabling seizures since surgery (Engel IIB)."
+}
+```
+
+Based on the details provided, there does not appear to be evidence to support assigning multiple Engel scores to this patient. Please let me know if you need any clarification or have additional questions!

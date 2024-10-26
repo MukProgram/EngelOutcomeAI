@@ -1,0 +1,8 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IVC.
+
+{
+  "score": "IVC",
+  "reasoning": "The patient has had worsening seizures over the past year, with 'quite a number of generalised tonic clonic seizures' according to the partner's report. This indicates no worthwhile improvement in seizures, with seizures actually worsening over time. Therefore, an Engel score of IVC ('Seizures worse') is the most appropriate score."
+}
+
+The note does not provide enough information to confidently suggest any other possible scores. If more details on seizure frequency, seizure-free intervals, etc. were provided, other scores could be considered. But with the information given, IVC seems to be the only justifiable score.

@@ -1,0 +1,8 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IC.
+
+{
+  "score": "IC",
+  "reasoning": "The patient has a diagnosis of genetic generalized epilepsy with generalized tonic clonic seizures alone. He has rare disabling seizures, with only 2 generalized tonic clonic seizures per year since 2010. He had a seizure in July 2016 and another in December 2015, but has been free of disabling seizures for over 2 years since the July 2016 seizure. This fits the IC criteria of 'Some disabling seizures after surgery, but free of disabling seizures for at least 2 years'."
+}
+
+There is only one clear Engel score based on the information provided. The patient does not fully meet criteria for IA, IB, ID, or any Class II-IV criteria based on the details given. Therefore, I have only provided the single Engel score of IC with reasoning.

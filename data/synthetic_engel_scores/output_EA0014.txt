@@ -1,0 +1,23 @@
+Based on the information provided in the clinical note, there is not enough detail to definitively assign an Engel score. The note states that despite being on two anti-seizure medications, the patient continues to have general and complex partial seizures. However, it does not quantify the frequency or severity of the seizures.
+
+The two most likely Engel scores are:
+
+1. IVB - No appreciable change:
+
+```json
+{
+  "score": "IVB",
+  "reasoning": "The note states the patient continues to have general and complex partial seizures despite medications, but provides no further detail on seizure frequency or severity. This suggests there has been no appreciable change or worthwhile improvement in seizures, fitting the criteria for score IVB."
+}
+```
+
+2. IIIA - Worthwhile seizure reduction:
+
+```json  
+{
+  "score": "IIIA", 
+  "reasoning": "It's possible the patient has had some degree of worthwhile seizure reduction on the medications, but the lack of quantification in seizure frequency makes it difficult to definitively assign this score."
+}
+```
+
+Without more specifics on the patient's current seizure frequency and how it compares to baseline, I cannot confidently assign a single Engel score. The provided clinical note lacks the necessary details. Providing scores IVB and IIIA as the two most likely possibilities based on the limited information given.

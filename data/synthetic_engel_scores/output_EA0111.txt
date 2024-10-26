@@ -1,0 +1,10 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIC",
+  "reasoning": "The patient is described as having 'more than rare disabling seizures' currently, with seizures occurring on a weekly basis. This fits the IIC criteria of 'More than rare disabling seizures after surgery, but rare seizures for at least 2 years.' However, there is no mention of whether the patient is post-surgery. Since the instructions state to ignore whether the patient is post-surgery, IIC appears to be the best fit score based on the seizure frequency described."
+}
+```
+
+There is no evidence to support multiple possible scores for this patient based on the information given. The seizure frequency is clearly stated as weekly, which rules out scores IA, IB, ID, IIA, IIB, and IIIB that require seizure freedom or rare seizures only. Scores IIIA, IVA, and IVB reference seizure reduction or no change, which does not match the described worsening of seizures. Only score IIC references the increased seizures with disabling seizures occurring more often than rarely but not constantly.

@@ -1,0 +1,6 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIB.
+
+{
+  "score": "IIB",
+  "reasoning": "The patient is described as having 'long-standing intractable epilepsy' and has continued to experience disabling generalized tonic-clonic seizures, with 4 seizures noted since last October. This fits the criteria for Engel IIB - 'Rare disabling seizures since surgery'. Even though the patient has not undergone surgery, the instructions state to assign a score ignoring surgery status. The seizures are described as generalized tonic-clonic lasting around 1 minute, occurring without warning, and producing post-ictal confusion lasting 10 minutes. These would be considered disabling seizures. Since last October, the patient has experienced 4 disabling seizures, which could be considered 'rare'. There is no evidence of a period of being seizure-free for at least 2 years, so scores IA, IB, IC, and IID would not apply. There is also no clear evidence of a worthwhile seizure reduction (IIIA) or prolonged seizure-free intervals (IIIB). Given the available information, Engel IIB appears the most applicable."
+}

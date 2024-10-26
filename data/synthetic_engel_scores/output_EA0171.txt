@@ -1,0 +1,21 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IB.
+
+My reasoning is:
+
+- The patient has a history of focal epileptic seizures since age 17, with episodes of transient loss of consciousness and strange stomach sensations occurring before the seizures
+- MRI and EEG testing in 2018 were normal
+- The patient was started on lamotrigine 50mg twice daily and has not had any seizures since starting this medication
+- This fits the criteria for Engel class IB - "Non disabling simple partial seizures only since surgery" - in this case, the "surgery" is considered starting anti-seizure medication rather than actual surgery
+- While not explicitly stated, there is no evidence of the patient having disabling seizures since starting medication, only the focal onset seizures prior to medication
+- No other Engel class fits the details provided
+
+Therefore, my assessment is:
+
+```json
+{
+  "score": "IB",
+  "reasoning": "The patient has a history of focal seizures but has been seizure-free on medication without evidence of disabling seizures since starting treatment, meeting criteria for Engel IB."
+}
+```
+
+There is no evidence to support alternate Engel scores based on the clinical note provided. Please let me know if you need any clarification or have additional information to add.

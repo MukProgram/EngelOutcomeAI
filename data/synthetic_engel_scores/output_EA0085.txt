@@ -1,0 +1,10 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient has a history of generalized tonic-clonic seizures as well as myoclonic jerks. He has seizures on average once per year, with 3 seizures occurring in 2020. This frequency of disabling seizures meets criteria for Engel IIB - Rare disabling seizures since surgery. While the patient has not actually undergone surgery, the instructions state to ignore whether the patient is post-surgery and to assign a score based solely on seizure frequency. With an average of 1 disabling seizure per year and no period of being seizure-free for at least 2 years, Engel IIB appears the most applicable."
+}
+```
+
+There is no evidence to support assigning multiple Engel scores based on the information provided. The patient clearly meets criteria for Engel IIB based on the seizure frequency. If additional clinical information suggested the patient may meet criteria for another Engel class, then multiple scores could be provided. But with the given data, Engel IIB is the only justifiable score.

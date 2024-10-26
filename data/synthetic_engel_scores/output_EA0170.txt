@@ -1,0 +1,6 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIB.
+
+{
+  "score": "IIB",
+  "reasoning": "The patient continues to have infrequent complex partial seizures, described as occurring about once to twice per month. This frequency of disabling seizures would be consistent with an Engel score of IIB ('Rare disabling seizures since surgery'). While the note does not state the patient has had surgery, the instructions said to ignore that aspect for determining the Engel score. No other Engel scores seem applicable based on the seizure frequency described."
+}

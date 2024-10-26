@@ -1,0 +1,18 @@
+Based on the information provided in the clinical note, there are insufficient details to definitively assign an Engel score. The note does not provide information about the patient's seizure frequency, severity, or duration of seizure freedom that would allow classification along the Engel scale criteria. 
+
+However, some information can be inferred:
+
+- The patient has a diagnosis of epilepsy and is on anti-seizure medications, indicating a history of seizures
+- The note mentions "1-2 seizures occurring per day" recently, indicating the patient is not seizure-free
+- There is no mention of a prolonged seizure-free period of at least 2 years, as required for several Engel classifications
+
+Given this, the most appropriate Engel scores would be:
+
+```json
+{
+  "score": "4B",
+  "reasoning": "The patient is reported to be having 1-2 seizures per day currently. This indicates no appreciable change or worthwhile improvement in seizures, meeting criteria for Engel class IVB."
+}
+```
+
+If further details on seizure frequency over an extended timeframe or responses to medication changes were provided, additional Engel classifications could be justified. But with the limited information given, class IVB is most appropriate.

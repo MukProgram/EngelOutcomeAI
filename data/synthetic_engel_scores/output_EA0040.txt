@@ -1,0 +1,8 @@
+Based on the information provided, I would assign this patient an Engel score of IIB.
+
+{
+  "score": "IIB",
+  "reasoning": "The patient is described as having 'three or four further episodes' of seizures consisting of staring, falls, and one episode of a lateral tongue bite during sleep. This indicates he is still having disabling seizures, though they are described as not lasting very long and being helped by the recent addition of lamotrigine. Given he continues to have disabling seizures, though they are reduced in frequency, an Engel score of IIB ('Rare disabling seizures since surgery') seems most appropriate."
+}
+
+The note does not provide enough information to confidently assign any other Engel score. If further details emerge that might suggest an alternative score, I would be happy to reconsider my assessment.

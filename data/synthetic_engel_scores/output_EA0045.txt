@@ -1,0 +1,12 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient has had rare disabling seizures since the onset of his epilepsy in June 2018. He has had 3 focal to bilateral convulsive seizures during sleep, which are disabling. He has also had several focal seizures with altered awareness while awake, which may be considered disabling as well since he was driving during one episode. He continues to have rare disabling seizures, most consistent with an Engel score of IIB."
+}
+```
+
+There is no evidence of a period of being seizure-free for at least 2 years, so scores IA, IB, IC, IIIB are not applicable. There is also no clear evidence that the seizures have significantly reduced in frequency or that there has been no appreciable change, as would be required for scores IIIA, IVA, or IVB. The seizures do not appear to be worsening as in IVC. 
+
+Therefore, based on the available information, I believe IIB is the most accurate Engel score. Let me know if you need any clarification or have additional information to add regarding the patient's seizure frequency, severity, or duration of illness.

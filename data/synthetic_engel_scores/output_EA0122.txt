@@ -1,0 +1,24 @@
+Based on the information provided, I would assign this patient an Engel score of IC.
+
+The reasoning is:
+
+- The patient has had epilepsy for several years. She experiences generalized tonic-clonic seizures, with the last seizure occurring 2 years ago. Prior to that, she had been seizure-free for 10 years.
+
+- She is currently on sodium valproate (an anti-epileptic medication) which has kept her relatively seizure-free over an extended period.
+
+- Per the Engel criteria, IC is defined as: "Some disabling seizures after surgery, but free of disabling seizures for at least 2 years."
+
+- While it is not clearly stated if the patient has had surgery, the criteria of being free of disabling seizures for at least 2 years fits her current profile.
+
+- There is no evidence provided of other Engel scores being applicable. IC appears to be the best match based on the details given.
+
+Therefore, I would assign an Engel score of IC to this patient.
+
+Here is the response in the requested JSON format:
+
+```json
+{
+  "score": "IC",
+  "reasoning": "The patient has had generalized tonic-clonic seizures in the past but has been free of disabling seizures for the last 2 years. This meets the criteria for Engel score IC." 
+}
+```

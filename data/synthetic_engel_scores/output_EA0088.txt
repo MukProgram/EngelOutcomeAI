@@ -1,0 +1,10 @@
+Based on the clinical note, here is the assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IA",
+  "reasoning": "The patient has been seizure free since before Christmas, which indicates a period of at least 2 years free of disabling seizures after surgery. This meets the criteria for Engel score IA - Completely seizure-free since surgery."
+}
+```
+
+There is no evidence of any seizures or antiepileptic drug withdrawal in the clinical note, so Engel score IA is the only applicable score based on the information provided. Let me know if you need any clarification or have additional questions!

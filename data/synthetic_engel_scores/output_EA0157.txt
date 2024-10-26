@@ -1,0 +1,10 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score and reasoning:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is having between 3-4 disabling seizures per week currently. This frequency of disabling seizures fits the criteria for Engel IIB - 'Rare disabling seizures since surgery'. Even though the patient has not had surgery, the instructions stated to assign a score ignoring whether the patient was post-surgery or not. The seizures are described as generalised tonic-clonic seizures and complex partial seizures, both of which would be considered disabling. There is no evidence of a period of being seizure-free for at least 2 years, so scores IA, IB, IC, and IIIB would not apply. There is also no mention of nocturnal seizures only or worthwhile seizure reduction, so scores IID and IIIA would not apply either. The frequency of 3-4 disabling seizures per week is too high for scores IIA, IIC, or IVB."
+}
+```
+
+In this case, I believe IIB is the only score that fits the available information, so I have not included alternate scores or reasoning. Let me know if you need any clarification or have additional information to add!

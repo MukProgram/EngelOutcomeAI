@@ -1,0 +1,10 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is experiencing rare disabling seizures since starting levetiracetam after his seizure cluster in February. Specifically, he is having brief focal seizures with altered awareness, described as 'blank episodes' where he stares blankly for a couple minutes. These appear to be disabling given that he sometimes falls asleep afterwards. Since starting levetiracetam, he has not had any convulsive seizures. Given the rare occurrence but disabling nature of these focal seizures, the Engel score that best fits is IIB - Rare disabling seizures since surgery."
+}
+```
+
+The clinical note does not provide enough information to confidently assign any other Engel score. The provided details best match the IIB criteria based on my interpretation. Please let me know if you need any clarification or have additional information to add.

@@ -1,0 +1,10 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is experiencing rare disabling seizures since he developed new seizure types (complex partial seizures) in the last 2 years, in addition to his previously well-controlled generalized tonic-clonic seizures. He now has 4-5 complex partial seizures per year that cause unresponsiveness, hand shaking, dizziness, headache, and nausea. These sound disabling compared to his previous seizure control. Based on the Engel criteria, this fits class IIB - rare disabling seizures since surgery/intervention."
+}
+```
+
+There is no evidence to support multiple possible Engel scores for this patient based on the information given. The emergence of new disabling seizure types in the last 2 years clearly fits the IIB criteria of rare disabling seizures since the undefined 'surgery/intervention' being evaluated for Engel scoring.

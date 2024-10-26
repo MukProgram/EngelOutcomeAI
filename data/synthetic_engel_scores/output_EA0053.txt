@@ -1,0 +1,10 @@
+Based on the clinical note, here is my assessment of the patient's Engel score and reasoning:
+
+```json
+{
+  "score": "1B",
+  "reasoning": "The patient is experiencing non-disabling simple partial seizures in the form of myoclonic jerks. There is no mention of disabling seizures or seizures resulting in loss of consciousness. While she is not completely seizure-free, her current seizures would be considered non-disabling based on the description. Therefore, an Engel score of 1B - Non disabling simple partial seizures only since surgery (though she has not had surgery) - is most appropriate."
+}
+```
+
+The note does not provide enough information to confidently assign any other Engel scores. While there is a family history and theoretical future risk of disabling seizures, the information provided indicates the patient currently experiences only non-disabling simple partial seizures.

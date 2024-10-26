@@ -1,0 +1,24 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIC (Class II, Subclass C).
+
+Here is my reasoning:
+
+The patient is described as having weekly seizures that are a mixture of focal impaired awareness seizures and dissociative seizures. This frequency of disabling seizures means she does not qualify for Class I (free of disabling seizures).
+
+She could potentially fit Class II ("rare disabling seizures" or "almost seizure-free"), but subclass A and B do not apply since she did not start out seizure-free after surgery and does not have rare disabling seizures currently. 
+
+Subclass IIC fits best - "More than rare disabling seizures after surgery, but rare seizures for at least 2 years." She has more than rare disabling seizures currently, occurring on a weekly basis. The note does not provide information on the timeframe, so it is unclear if she has had rare seizures for at least 2 years. However, IIC fits best based on the available information.
+
+In summary, the Engel score that best fits this patient is:
+
+**Score:** IIC
+
+**Reasoning:** The patient has weekly focal impaired awareness seizures and dissociative seizures. This frequency is more than rare disabling seizures, but the 2-year timeframe criteria for IIC is unclear. However, IIC fits best with the available information on seizure frequency.
+
+I do not see any other possible scores that would be valid given the details provided. Please let me know if you need any clarification or have additional questions!
+
+```json
+{
+  "score": "IIC",
+  "reasoning": "The patient has weekly focal impaired awareness seizures and dissociative seizures. This frequency is more than rare disabling seizures, but the 2-year timeframe criteria for IIC is unclear. However, IIC fits best with the available information on seizure frequency."
+}
+```

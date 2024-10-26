@@ -1,0 +1,18 @@
+Based on the information provided, here is the assessment:
+
+```json
+{
+  "score": "IIA",
+  "reasoning": "The patient is classified as Engel IIA ('Rare disabling seizures') based on the following:
+
+- The patient has had only 1 seizure in the last 3 months since increasing his carbamazepine dose. This indicates he was initially free of disabling seizures after increasing medication, but has had a rare seizure since then.
+
+- He has focal slowing on EEG indicative of seizure tendency, and a prior normal MRI.
+
+- While the note states his memory and thinking have improved, there is no clear indication he is free of disabling seizures at this time. 
+
+The criteria of IIA - 'Initially free of disabling seizures but has rare seizures now' - most closely matches this patient's status."
+}
+```
+
+In this case there is only one Engel score that matches the information provided in the clinical note. If there were multiple possible classifications for this patient, I would list out the additional options with reasoning.

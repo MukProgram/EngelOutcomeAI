@@ -1,0 +1,10 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IC",
+  "reasoning": "The patient had 4 disabling seizures in February 2019, but has been free of disabling seizures since being started on lamotrigine medication. As of the clinic date on March 9th, 2019, the patient had been free of disabling seizures for over 1 month but less than 2 years. This fits the criteria for Engel score IC: 'Some disabling seizures after surgery, but free of disabling seizures for at least 2 years'."
+}
+```
+
+There is no evidence to support any other Engel scores based on the details given. The patient had disabling seizures after starting medication, ruling out scores IA, IB, IIA, IIB, and IIIB which require no disabling seizures or rare disabling seizures only. There is also no mention of simple partial seizures (IB), nocturnal seizures only (IID), antiepileptic drug withdrawal (ID), prolonged seizure free intervals (IIIB), worthwhile seizure reduction (IIIA), significant seizure reduction (IVA), no change in seizures (IVB), or worsening seizures (IVC). Therefore, Engel score IC appears to be the only justifiable score based on the clinical note.

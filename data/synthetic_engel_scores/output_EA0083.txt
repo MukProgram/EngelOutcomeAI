@@ -1,0 +1,8 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIB.
+
+{
+  "score": "IIB",
+  "reasoning": "The patient is described as having refractory focal epilepsy with nocturnal generalised tonic-clonic seizures. She has recently had an increase in seizures to a frequency of weekly. The seizures are described as tonic-clonic with tongue biting and facial injuries. This frequency and severity of seizures fits the criteria for an Engel score of IIB - 'Rare disabling seizures since surgery'."
+}
+
+Since there is no mention of the patient having surgery, and the details provided fit cleanly into the IIB category, I don't believe there are any other potential Engel scores that could reasonably be assigned based on the information given. Please let me know if any clarification or additional detail is needed!

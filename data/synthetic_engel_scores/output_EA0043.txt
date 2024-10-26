@@ -1,0 +1,24 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIA (Rare disabling seizures).
+
+My reasoning is:
+
+- The patient has a history of 4 seizure episodes over the past 4 years, which equates to around 1 seizure per year. This frequency would be considered "rare" based on the Engel criteria.
+
+- The seizures are described as episodes of unconsciousness with tongue biting and post-ictal confusion, indicating they are likely disabling seizures.
+
+- The patient was initially seizure-free from age 8 months (after a febrile seizure) until the first event at age 15. She then began having rare disabling seizures, meeting criteria for Engel IIA.
+
+- There is no evidence of seizure freedom for at least 2 years, prolonged seizure free intervals >50% of follow up period, or nocturnal seizures only. So scores of IC, IIIB, or IID would not apply based on the information given.
+
+In summary, the description of around 1 disabling seizure per year, with initial seizure freedom followed by rare seizures, best fits the Engel IIA category of "Rare disabling seizures".
+
+Here is the output in the requested JSON format:
+
+```json
+{
+  "score": "IIA",
+  "reasoning": "The patient has a history of 4 seizure episodes over the past 4 years, which equates to around 1 seizure per year. This frequency would be considered \"rare\" based on the Engel criteria. The seizures are described as episodes of unconsciousness with tongue biting and post-ictal confusion, indicating they are likely disabling seizures. The patient was initially seizure-free from age 8 months (after a febrile seizure) until the first event at age 15. She then began having rare disabling seizures, meeting criteria for Engel IIA."
+}
+```
+
+Let me know if any clarification or additional reasoning is needed!

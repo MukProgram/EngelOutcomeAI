@@ -1,0 +1,17 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is having rare disabling seizures since starting new medication, with a frequency of about 1 seizure per month. This fits the criteria for Engel IIB - 'Rare disabling seizures since surgery'. Though the patient has not had surgery, the medication changes serve a similar purpose, so this score seems most applicable. None of the other Engel scores accurately capture the seizure frequency and lack of complete seizure control that is described."
+}
+```
+
+The key factors in choosing Engel IIB are:
+
+- Patient has focal epilepsy with seizures occurring about once per month 
+- Seizures are described as "disabling" 
+- Seizures have continued at this frequency since recent medication changes
+- No other Engel class accurately captures the seizure frequency and lack of complete seizure control
+
+Let me know if you need any clarification or have additional questions!

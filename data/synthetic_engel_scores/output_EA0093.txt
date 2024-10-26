@@ -1,0 +1,10 @@
+Based on the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IB",
+  "reasoning": "The patient has been seizure-free since Christmas 2015, which is over 2 months. She only reports non-disabling simple partial seizures (becoming very tearful when withdrawing medication). This meets the criteria for Engel score IB - Non disabling simple partial seizures only since surgery. While it is not clear if she had surgery, the instructions said to ignore that aspect and assign a score based on the outcome criteria."
+}
+```
+
+The note does not mention multiple possible scores, so I have provided only the single score of IB with reasoning. Let me know if you need any clarification or have additional questions!

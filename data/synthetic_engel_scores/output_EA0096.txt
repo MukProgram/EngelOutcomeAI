@@ -1,0 +1,10 @@
+Based on the information provided, here is my assessment:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient seems to have rare disabling seizures since surgery (mother reported he had a good seizure control until a week ago when it began to slip). In the last week, he had disabling nocturnal generalised tonic clonic seizures as well as frequent drop attacks and absences during the day, indicating rare disabling seizures. This fits the criteria for Engel IIB - Rare disabling seizures since surgery."
+}
+```
+
+There is not enough information provided to determine alternate scores. The note focuses on the increase in seizures in the past week, but does not provide a clear timeline of the patient's full seizure history since surgery. Without more details, IIB appears to be the best fit based on the rare disabling seizures reported in the last week.

@@ -1,0 +1,10 @@
+Based on the information provided in the clinical note, here is my assessment of an Engel score for this patient:
+
+```json
+{
+  "score": "IID",
+  "reasoning": "The patient has had 4 generalized tonic-clonic seizures, occurring only during sleep. She has had no seizures while awake. This fits the criteria for Engel Class IID - 'Nocturnal seizures only'. While she has had more than one seizure, they have all occurred during sleep, so Class IID appears most applicable. There is no mention of any seizure reduction or prolonged seizure-free intervals, so Classes III and IV do not seem accurate. Since all seizures have occurred during sleep, Class IID 'Nocturnal seizures only' is the best fit based on the details provided."
+}
+```
+
+I have provided one score as there does not appear to be multiple possible scores based on the information in the clinical note. The reasoning explains why I chose Class IID as the Engel score for this patient. Let me know if you need any clarification or have additional questions!

@@ -1,0 +1,18 @@
+Unfortunately there is insufficient information in the clinical note to definitively assign an Engel score. The note does not provide details on the patient's current seizure frequency, severity, or duration of seizure freedom.
+
+Based on the limited information provided, here is my assessment:
+
+```json
+{
+  "score": "Insufficient Information",
+  "reasoning": "The clinical note does not provide specifics on the patient's current seizure frequency, severity, or duration of seizure freedom post-treatment. Without these details, it is not possible to accurately classify the patient's outcome using the Engel scale."
+}
+```
+
+To assign an Engel score, more details would be needed on factors like:
+
+- How often is the patient currently having seizures? 
+- Are the seizures disabling? 
+- Has there been any period of seizure freedom lasting 2+ years since surgery/treatment?
+
+Unfortunately the note lacks these specifics. I would need to follow up with the clinician for more details before classifying the patient's outcome. Let me know if any additional information can be provided.

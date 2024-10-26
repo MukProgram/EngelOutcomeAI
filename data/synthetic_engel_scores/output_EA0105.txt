@@ -1,0 +1,12 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIA.
+
+Here is my reasoning:
+
+```json
+{
+  "score": "IIA",
+  "reasoning": "The patient has focal epilepsy that presented with generalized tonic-clonic seizures after a stroke. She has been on sodium valproate 500mg daily for seizure control. The note states that her seizures have been 'reasonably well controlled' on this medication, with a maximum seizure-free period of 3 years. However, she did have a cluster of seizures in February/March this year, indicating that she is no longer completely seizure-free. This fits the IIA criteria of 'Initially free of disabling seizures but has rare seizures now.' While the frequency of seizures is not explicitly stated, the use of 'cluster' suggests they are still rare rather than frequent. There is no evidence to support a higher or lower score."
+}
+```
+
+Based on the information provided, there is only one Engel score that fits this patient's situation. Let me know if you need any clarification or have additional information to add regarding seizure frequency, severity, or impact.

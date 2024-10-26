@@ -1,0 +1,22 @@
+Unfortunately there is insufficient information in the clinical note to definitively assign an Engel score. The note does not provide details on the patient's seizure frequency, seizure type, or response to treatment over time, which are necessary to categorize based on the Engel criteria. 
+
+However, some information can be inferred:
+
+- The patient has ongoing seizures that are described as "reasonably controlled", suggesting they are not seizure free. This rules out Engel Class I.
+
+- There is no mention of rare/disabling seizures occurring, so Class II cannot be assigned. 
+
+- There is a recommendation to change medications to improve seizures, implying the current control is suboptimal. This likely rules out Class III "worthwhile improvement".
+
+- No details are given on whether seizures are better, worse, or unchanged. 
+
+Given the limited information, the most appropriate Engel score I can reasonably assign is:
+
+```json
+{
+  "score": "IVB",
+  "reasoning": "The note states the patient's seizures are 'reasonably controlled' on medications, implying suboptimal control. There is a recommended medication change to improve this further. This suggests no appreciable change in seizure status, meeting criteria for Engel Class IVB."
+}
+```
+
+Without further clinical details on seizure frequency, type, and response to interventions over time, it is not possible to assign alternate Engel scores or classifications. Please let me know if any additional patient information is available.

@@ -1,0 +1,18 @@
+Based on the information provided, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is experiencing focal seizures with altered awareness every 3 weeks since having surgery to remove a meningioma in 2005. He had a period of seizure freedom after surgery, but now has rare disabling seizures occurring approximately once every 3 weeks. This fits the criteria for Engel IIB - rare disabling seizures since surgery."
+}
+```
+
+The key details supporting the IIB score are:
+
+- Had surgery (meningioma resection) in 2005
+- Was initially seizure-free after surgery but now has recurring seizures 
+- Seizures are focal seizures with altered awareness 
+- Seizures occur approximately once every 3 weeks
+- Seizures are considered disabling based on the description
+
+There is no evidence to support any other Engel scores based on the details provided. Therefore, I have only provided the single Engel IIB score and reasoning in my output. Please let me know if you need any clarification or have additional details to provide that could change the scoring assessment.

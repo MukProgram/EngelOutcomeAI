@@ -1,0 +1,12 @@
+Based on the information provided in the clinical note, there are insufficient details to definitively assign an Engel score. The note states that the patient gets "frequent focal dyscognitive seizures in clusters" and had 10-15 seizures over 2 days the previous week, but does not provide specifics on the frequency, duration or impact of seizures over a longer timeframe that would allow assessment under the Engel criteria.
+
+Without further details, here is my best attempt at assigning a score:
+
+```json
+{
+  "score": "IVB",
+  "reasoning": "The patient continues to experience disabling focal dyscognitive seizures, occurring about 10-15 times over 2 days last week. This indicates the patient has frequent, ongoing seizures without appreciable improvement or control. However, specifics on the patient's seizure frequency, duration of seizures, severity, and how this compares to their baseline prior to any treatment is not provided to make a definitive assessment."
+}
+```
+
+If further details on the patient's seizure frequency, duration, severity, impact on functioning, and response to any prior treatments were available, a more definitive Engel score could be assigned. But based on the limited information provided, class IVB indicating no appreciable change seems most appropriate.

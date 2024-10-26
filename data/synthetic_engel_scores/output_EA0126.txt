@@ -1,0 +1,15 @@
+Based on the information provided in the clinical note, I would assign Mr. Joyce an Engel score of IIB (Rare disabling seizures since surgery).
+
+My reasoning is as follows:
+
+- Mr. Joyce has focal frontal lobe seizures consisting of stiffening and arm posturing that occur around 4-5 times per month. These seizures cause impairment/disability, so they would be considered disabling.
+- He also has a history of focal to bilateral convulsive seizures, but it is noted that these "haven't happened for several years now."
+- The focal frontal lobe seizures that occur 4-5 times per month would be consistent with "rare disabling seizures since surgery" per the Engel scale criteria of Class II, specifically subclass IIB.
+- While the timeframe "since surgery" is not applicable here since there is no mention of prior epilepsy surgery, the frequency of disabling seizures still fits the general concept of rare/infrequent disabling seizures in Class II.
+
+Therefore, the Engel score that best fits the details provided is IIB.
+
+{
+  "score": "IIB",
+  "reasoning": "Mr. Joyce has focal frontal lobe seizures consisting of stiffening and arm posturing that occur around 4-5 times per month. These would be considered disabling seizures. The frequency of 4-5 times per month would be consistent with 'rare disabling seizures' as per Engel Class II subclass IIB criteria." 
+}

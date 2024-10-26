@@ -1,0 +1,12 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIB.
+
+Here is my analysis:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is experiencing rare disabling seizures since his surgery in 2006 to treat an AVM. Specifically, it is stated that he started having seizures soon after the 2006 surgery, indicating he has had seizures since then. Recently, the note says he is having seizures 2-3 times per month. This frequency would still be considered 'rare' based on the Engel criteria definitions. While he has had a worthwhile reduction in seizures since surgery, he has not been seizure free for at least 2 years since surgery. Therefore, an Engel score of IIB (Rare disabling seizures since surgery) seems most appropriate."
+}
+```
+
+There is no evidence to support alternate Engel scores based on the details provided. The patient has continued to experience disabling seizures since his surgery, though at a reduced frequency that would still be considered rare. If additional clinical details emerge that point to a different score, please let me know.

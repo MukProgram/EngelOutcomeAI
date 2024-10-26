@@ -1,0 +1,10 @@
+Based on the information provided, here is my assessment:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is having rare disabling seizures, specifically one generalized tonic clonic seizure every two months. This meets the criteria for Engel class IIB - 'Rare disabling seizures since surgery'. While surgery is not mentioned, the instructions state to ignore whether the patient is post-surgery. The seizures are disabling based on being generalized tonic clonic seizures. The frequency of one every two months classifies them as rare. Therefore, IIB appears to be the most appropriate score."
+}
+```
+
+There is no clear evidence to support alternative scores based on the information given. If additional details emerge that suggest other possible classifications, those could be provided as well with accompanying reasoning. But with the details available, IIB seems to best capture this patient's current seizure status.

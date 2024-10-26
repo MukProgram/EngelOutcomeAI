@@ -1,0 +1,23 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIB.
+
+The reasoning is as follows:
+
+- The patient has a diagnosis of epilepsy with bilateral convulsive seizures. 
+- She initially went 2 years seizure-free after her first event at age 22. This meets criteria for Engel Class IA.
+- However, she then began having infrequent seizures, around 1-2 per year. This frequency is described as "rare disabling seizures" which meets criteria for Engel IIB.
+- She has these rare seizures despite anti-epileptic medication, meeting IIB criteria of "rare disabling seizures since surgery." In this case "surgery" can be interpreted as initiation of treatment.
+- The seizures are described as convulsive bilateral events, which are considered disabling.
+- There is no mention of her being seizure-free for at least 2 years since starting medication, so she does not meet criteria for IC, IIA or IIC.
+
+Therefore, based on the available information, Engel IIB - "Rare disabling seizures since surgery" is the most accurate score.
+
+Here is the output in JSON format:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient has rare (1-2 per year) disabling convulsive bilateral seizures despite treatment with anti-epileptic medication. This meets criteria for Engel score IIB: Rare disabling seizures since surgery."
+}
+```
+
+Let me know if you need any clarification or have additional questions!

@@ -1,0 +1,30 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIA (Rare disabling seizures (“almost seizure-free”)).
+
+The reasoning is:
+
+1. The patient had a traumatic brain injury in 2005 resulting in ongoing issues with left sided weakness and mood problems. 
+
+2. Prior to September 2019, there is no mention of the patient having seizures. 
+
+3. In September 2019, the patient had an initial set of focal impaired awareness seizures followed by bilateral convulsive seizures requiring hospitalization. This was his first seizure event.
+
+4. He has not had any seizures since the September 2019 event. 
+
+5. His MRI showed evidence of gliosis related to his prior traumatic brain injury. His EEG showed right sided sharp waves. 
+
+6. He was started on anti-epileptic medications (levetiracetam and phenytoin).
+
+Based on having a single seizure event so far, with no further seizures since starting medications, he meets criteria for Engel IIA - "Initially free of disabling seizures but has rare seizures now". 
+
+He does not meet criteria for IA since he has had some disabling seizures after the initial event. However, given he has been seizure free since starting medications, IIA seems most applicable currently.
+
+There is no clear evidence to support alternative Engel scores at this time.
+
+Here is the output in JSON format:
+
+```json
+{
+  "score": "IIA",
+  "reasoning": "The patient had a single seizure event in September 2019 requiring hospitalization, with no further events since then after starting anti-epileptic medications. This meets criteria for Engel IIA - rare disabling seizures after an initial seizure free period." 
+}
+```

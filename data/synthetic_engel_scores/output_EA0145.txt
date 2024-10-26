@@ -1,0 +1,24 @@
+Based on the information provided, I would assign this patient an Engel score of IIB.
+
+My reasoning is:
+
+- The patient has epilepsy with two types of seizures: blank episodes occurring at least once per day, and grand mal seizures occurring a few times per month. Both seizure types appear to be disabling based on their frequency and effects described.
+
+- The patient has tried multiple anti-seizure medications in the past with adverse effects or lack of efficacy. Her current medications of clobazam and lamotrigine have reduced but not eliminated her disabling seizures. 
+
+- She continues to have rare disabling grand mal seizures a few times per month despite medications. This fits the criteria for Engel IIB - "Rare disabling seizures since surgery".
+
+- While she has daily blank episodes, these could potentially qualify as non-disabling simple partial seizures (Engel IB). However, the information provided indicates they are disabling based on frequency, duration, and loss of awareness.
+
+As there is only one clear Engel score based on the details provided, I have not included other possible classifications or reasons. If further information becomes available, other scores may be applicable.
+
+Here is the output in JSON format:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient has rare disabling grand mal seizures a few times per month despite medications. This fits the criteria for Engel IIB - 'Rare disabling seizures since surgery'."
+}
+```
+
+Let me know if you need any clarification or have additional information to provide.

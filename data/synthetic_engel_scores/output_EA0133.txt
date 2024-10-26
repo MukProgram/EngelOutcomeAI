@@ -1,0 +1,11 @@
+Based on the information provided, I would assign this patient an Engel score of IIB.
+
+Here is my analysis:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is having focal motor seizures 2-3 times per month. These seizures involve left arm jerks and are likely originating from the region of the prior right MCA infarct. Though not explicitly stated, these seizures are likely at least briefly disabling given their motor nature and frequency. The patient also has a history of focal to bilateral convulsive seizures, with the last one occurring in 2015. Given the ongoing disabling focal motor seizures, an Engel score of IIB ('Rare disabling seizures since surgery') seems most appropriate. While the convulsive seizures have been controlled for over 2 years, the focal motor seizures are still occurring on a regular basis and impacting quality of life. There is no clear evidence of complete seizure freedom or rare/nocturnal seizures only that would warrant a Class I score. The frequency of focal motor seizures also seems too high for a Class IIA score. However, if further details emerge that the focal seizures are non-disabling or rare, alternative scores could be considered."
+}
+
+In summary, based on the frequent focal motor seizures that are likely at least briefly disabling in nature, I assigned this patient an Engel score of IIB. Please let me know if you need any clarification or have additional details to share regarding seizure frequency, severity or impact.

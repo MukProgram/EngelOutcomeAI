@@ -1,0 +1,8 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of ID.
+
+{
+  "score": "ID",
+  "reasoning": "The patient has a history of epileptic seizures related to perinatal hypoxic injury, with seizure onset at age 10 years old. She has had around 6 seizures total, all occurring during sleep. Her last seizure was 10 years ago. She is currently on lamotrigine 150mg twice daily and has been seizure-free for the past 10 years while on this medication. Her recent MRI showed changes consistent with the original perinatal injury. These findings meet criteria for Engel class ID - generalized convulsions with antiepileptic drug withdrawal only. Specifically, she has a history of generalized seizures but has had no seizures for at least 2 years while on antiepileptic medication."
+}
+
+The provided history does not indicate any other possible Engel scores for this patient. There is no evidence of ongoing disabling seizures or worthwhile improvement/worsening to meet criteria for other Engel classes. Her stabilized condition on antiepileptic medication matches class ID criteria.

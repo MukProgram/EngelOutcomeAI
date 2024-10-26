@@ -1,0 +1,29 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIC.
+
+My reasoning is:
+
+- The patient has had epilepsy since age 3 (over 30 years)
+- She currently has complex partial seizures about once per month
+- These seizures cause impairment/disability (confused wandering)
+- She has rare generalized seizures, with the last one 10 years ago
+- She has tried multiple medications without achieving seizure freedom
+
+This fits the IIC criteria:
+"More than rare disabling seizures after surgery, but rare seizures for at least 2 years"
+
+While she has not had surgery, the note indicates she will be evaluated for possible surgery. So I focused on assessing her current seizure frequency and pattern based on the Engel scale criteria.
+
+Given the monthly complex partial seizures, she does not qualify for IA, IB, IC, IIA or IIB. 
+The prolonged history with monthly disabling seizures does not constitute a "worthwhile improvement" to qualify for Class III.
+And her seizures are not worsening, ruling out Class IV.
+
+Therefore, IIC is the best fit based on her seizure frequency, disability level, and seizure pattern over an extended period of time.
+
+My response in JSON format:
+
+```json
+{
+  "score": "IIC",
+  "reasoning": "The patient has complex partial seizures about monthly causing impairment, with rare generalized seizures historically. This fits IIC criteria based on seizure frequency, disability level, and pattern over an extended duration."
+}
+```

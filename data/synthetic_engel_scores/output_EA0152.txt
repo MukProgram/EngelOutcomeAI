@@ -1,0 +1,24 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIB.
+
+Here is the reasoning:
+
+- The patient has a diagnosis of symptomatic structural epilepsy with focal cortical dysplasia in the right temporal lobe. She experiences complex partial seizures about 1-2 times per month and secondary generalized seizures 3-4 times per year. 
+
+- She is currently taking anti-epileptic medications carbamazepine and clobazam. A previous trial of lamotrigine caused a rash.
+
+- The frequency of disabling seizures is described as complex partial seizures 1-2 times per month and secondary generalized seizures 3-4 times per year. This fits the criteria for Class II - Rare Disabling Seizures ("almost seizure-free").
+
+- Within Class II, subclass IIB is defined as "Rare disabling seizures since surgery." While it is not clearly stated if the patient has had surgery, the description of seizure frequency fits the "rare disabling seizures" criteria.
+
+- No other Engel score seems to accurately capture the seizure frequency described. Class I requires being seizure-free, while Class III requires a worthwhile seizure reduction or prolonged seizure-free intervals greater than half the follow-up period. The seizure frequency is too high to meet Class I criteria, and there is no mention of a worthwhile seizure reduction to meet Class III.
+
+Therefore, based on the available information, I would assign this patient an Engel score of IIB. There is only one score that seems to reasonably fit the clinical details provided.
+
+Here is the output in JSON format:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient experiences complex partial seizures about 1-2 times per month and secondary generalized seizures 3-4 times per year. This frequency fits the criteria for Class II - Rare Disabling Seizures, specifically subclass IIB defined as Rare disabling seizures since surgery."
+}
+```

@@ -1,0 +1,10 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is experiencing rare disabling seizures since starting new medications. Specifically, the patient has had 1 generalized tonic clonic seizure since the previous appointment. They also continue to have weekly myoclonic jerks and occasional absences. While the new medications have helped reduce seizures, the patient is still experiencing disabling seizures, though they appear to be rare based on having only 1 generalized seizure recently. This fits the criteria for Engel IIB - 'Rare disabling seizures since surgery'."
+}
+```
+
+There is no clear evidence for multiple possible scores based on the information given. The patient seems to fit criteria IIB most closely given the rare but continued presence of disabling seizure activity. Let me know if you need any clarification or have additional information to add regarding the patient's seizure frequency and type.

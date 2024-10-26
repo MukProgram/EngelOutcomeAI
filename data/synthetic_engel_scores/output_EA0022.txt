@@ -1,0 +1,22 @@
+Based on the information provided, I would assign this patient an Engel score of IB - Non disabling simple partial seizures only since surgery.
+
+My reasoning is:
+
+1. The note states that the focal epileptic seizures seem to be "well controlled" on lamotrigine, suggesting they are not disabling. 
+
+2. The patient continues to have "dizzy spells" lasting a few minutes where hearing is altered. Video EEG showed no epileptiform discharges during these events, suggesting they are non-epileptic dissociative seizures.
+
+3. There is no mention of generalized tonic-clonic or other convulsive seizures.
+
+4. The dissociative seizures would not factor into the Engel score since they are non-epileptic in nature.
+
+Therefore, I believe Engel IB - Non disabling simple partial seizures only since surgery best captures this patient's level of seizure control from their epilepsy.
+
+Here is the output in JSON format:
+
+```json
+{
+  "score": "IB",
+  "reasoning": "The note states that the focal epileptic seizures seem to be 'well controlled' on lamotrigine, suggesting they are not disabling. The patient continues to have brief 'dizzy spells' shown on video EEG to be non-epileptic dissociative seizures. There is no mention of convulsive seizures. Therefore, Engel IB - Non disabling simple partial seizures only since surgery best describes this patient's epilepsy."
+}
+```

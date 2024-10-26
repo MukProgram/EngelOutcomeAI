@@ -1,0 +1,8 @@
+Based on the information provided, I would assign Sheleena an Engel score of IIB.
+
+{
+  "score": "IIB",
+  "reasoning": "Sheleena is experiencing disabling seizures about every 1-2 weeks. This frequency would be considered 'rare' based on the Engel criteria, but the seizures are still disabling. Therefore, she best fits the IIB classification of 'Rare disabling seizures since surgery'."
+}
+
+Since there is no mention of Sheleena having surgery, there is only one clear Engel score that can be assigned based on the details provided. I don't see any other potential scores that could reasonably be justified.

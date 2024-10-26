@@ -1,0 +1,10 @@
+Based on the information provided in the clinical note, here is my assessment of an appropriate Engel score for this patient:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is having rare disabling seizures since the recent diagnosis of epilepsy and start of anti-epileptic drug treatment. Specifically, it is stated that 'Joan says the seizure frequency is roughly every 4 weeks at present.' Having a disabling seizure approximately once per month would be consistent with rare disabling seizures (Class II). There is no indication that she was initially seizure-free after starting treatment (IIA) or has been seizure-free for at least 2 years (IIC), so IIB (Rare disabling seizures since surgery) seems most applicable."
+}
+```
+
+There is no evidence to support multiple possible scores for this patient based on the information given. The note states she has disabling seizures around once per month, which matches the IIB criteria of rare disabling seizures since the undefined "surgery" (which in this case is the start of anti-epileptic treatment). Let me know if any additional information or clarification would be helpful!

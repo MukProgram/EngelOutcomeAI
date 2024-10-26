@@ -1,0 +1,6 @@
+Based on the information provided in the clinical note, I would assign the patient an Engel score of IVC.
+
+{
+  "score": "IVC",
+  "reasoning": "The patient is experiencing generalised seizures once a week as well as frequent absence seizures and myoclonic jerks several times a day. This indicates she is having frequent disabling seizures after surgery, meeting criteria for Engel score IVC - 'Some disabling seizures after surgery, but free of disabling seizures for at least 2 years'. No seizure free period of at least 2 years is mentioned, so scores IA, IB, IC, IIA, IIB, IIC, IIIA, and IIIB would not apply. She is not just having nocturnal seizures (ruling out IID) or rare disabling seizures (ruling out IIA and IIB), and there is no mention of withdrawal of medications causing seizures (ruling out ID). There is also no indication of a worthwhile seizure reduction or prolonged seizure free intervals (ruling out IIIA and IIIB). Her seizures appear to be worsening rather than showing any improvement, so scores IVA and IVB would not fit. Therefore, based on having frequent disabling seizures with no mention of any seizure free period over 2 years, IVC appears to be the most applicable Engel score."
+}

@@ -1,0 +1,16 @@
+Based on the information provided in the clinical note, there are insufficient details to definitively assign an Engel score. The patient appears to be newly diagnosed with epilepsy and has just been started on antiepileptic medication. No details are provided on the response to treatment or long-term seizure outcomes.
+
+However, some possibilities for Engel scores along with reasoning are provided below:
+
+```json
+{
+  "score": "IVB", 
+  "reasoning": "This would indicate no appreciable change in seizures, which fits with a new epilepsy diagnosis and no documented treatment response yet."
+},
+{
+  "score": "IIIA",
+  "reasoning": "This would indicate worthwhile seizure reduction. Since the patient was just started on medication, this could end up being the score if treatment is effective." 
+}
+```
+
+The score of IVB indicates no change in seizures, which fits with a newly diagnosed patient. A score of IIIA would imply worthwhile improvement, which is possible if treatment works well for this patient. Additional follow-up information would be needed to confirm the appropriate Engel score. Let me know if you need any clarification or have additional questions!

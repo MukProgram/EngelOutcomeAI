@@ -1,0 +1,12 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IC",
+  "reasoning": "The patient has been seizure-free since 2015 based on the note stating 'focal to bilateral convulsive seizures, last event 2015'. This meets the criteria for Engel class I. However, the patient did have focal seizures with altered awareness as recently as 2017. Having disabling seizures after surgery but being free of disabling seizures for at least 2 years meets the criteria for subclass IC. Therefore, the Engel score for this patient is IC."
+}
+```
+
+The patient falls into Engel class I since they are described as having their seizures "well controlled". However, they are not completely seizure-free since 2017, ruling out IA. The focal seizures with altered awareness in 2017 qualify as disabling seizures after surgery, though they have been seizure-free from those specific disabling seizures for over 2 years now. This matches the criteria for IC.
+
+Let me know if you need any clarification or have additional questions!

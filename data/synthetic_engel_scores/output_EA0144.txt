@@ -1,0 +1,20 @@
+Based on the information provided, I would assign this patient an Engel score of IIB (Rare disabling seizures since surgery).
+
+My reasoning is:
+
+- The patient had a right frontal meningioma resected in June 2012. He has continued to have complex partial seizures and partial motor seizures involving his left arm several times per month since the surgery. These seizures impair his awareness around half the time.
+
+- He has not had any generalized convulsive seizures since a few months after his surgery in 2012. This indicates he has rare disabling seizures consisting of the complex partial and focal motor seizures.
+
+- The description fits class IIB - Rare disabling seizures since surgery. He has disabling focal aware and focal impaired awareness seizures occurring multiple times per month since his surgery.
+
+I do not see evidence for alternate Engel scores based on the information provided. There is no mention of a period of being seizure-free followed by rare seizures starting later, which would be class IIA. He also does not have nocturnal seizures only (IID) or prolonged seizure free intervals (IIIB).
+
+Therefore, I would assign this patient an Engel score of:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient has continued to have complex partial seizures and focal motor seizures involving his left arm several times per month since resection of a right frontal meningioma in June 2012. These seizures impair his awareness around half the time. He has not had generalized convulsive seizures since a few months after surgery in 2012. This description fits class IIB - Rare disabling seizures since surgery."
+}
+```

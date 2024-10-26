@@ -1,0 +1,10 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "3A",
+  "reasoning": "The patient is experiencing worthwhile seizure reduction, but not complete seizure freedom. He has partial motor seizures involving left arm twitching about every month and secondary generalized seizures about every year. He also has non-epileptic psychogenic seizures brought on by stress. While the partial seizures are frequent, they are not as disabling as the generalized seizures which happen rarely. The generalized seizures have been reduced from pre-surgery frequency of every 2 months. Since the patient has had worthwhile seizure reduction but not complete seizure freedom for over 2 years, an Engel score of 3A (Worthwhile seizure reduction) is most appropriate."
+}
+```
+
+There is only one clear Engel score based on the details provided in the clinical note. Let me know if you need any clarification or have additional questions!

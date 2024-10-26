@@ -1,0 +1,12 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is experiencing rare disabling seizures since surgery, specifically focal seizures with altered awareness occurring about once per week. He has not had a focal to bilateral convulsive seizure for 3 years. This fits the criteria for Engel IIB - rare disabling seizures since surgery."
+}
+```
+
+The patient is not free of disabling seizures, so Class I does not apply. He continues to have focal seizures with altered awareness about once a week, which qualify as disabling seizures. However, these occur relatively infrequently, consistent with "rare disabling seizures" in the Class II definition. Additionally, he has not had a convulsive seizure in 3 years, further suggesting worthwhile improvement and seizure control, though not complete seizure freedom. Therefore, the Engel IIB designation of "Rare disabling seizures since surgery" most closely matches this patient's outcome.
+
+No other Engel scores seem to validly apply based on the details provided. If more information becomes available, further review of the appropriate Engel classification may be warranted. Please let me know if you need any clarification or have additional questions!

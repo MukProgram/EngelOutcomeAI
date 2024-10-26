@@ -1,0 +1,10 @@
+Based on the information provided, here is my assessment:
+
+```json
+{
+  "score": "IIA",
+  "reasoning": "The patient is experiencing rare disabling seizures ('almost seizure-free') after initially being free of disabling seizures following treatment. Specifically, the notes state that the patient's last generalised tonic clonic seizure was 2 years ago. He continues to have 2-3 absence seizures per day, which are considered non-disabling. Therefore, a classification of IIA ('Initially free of disabling seizures but has rare seizures now') is most appropriate."
+}
+```
+
+There is no evidence to support multiple possible scores here. The patient fits criteria IIA most closely based on the details provided.

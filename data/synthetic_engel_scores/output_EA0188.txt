@@ -1,0 +1,18 @@
+Based on the information provided, this patient would best fit into Engel class IIIA (Worthwhile seizure reduction).
+
+Here is the reasoning:
+
+- The patient is having around 1 seizure per day currently. She also has more severe secondary generalized seizures about once per month. This frequency of disabling seizures does not qualify her for class I (free of disabling seizures) or class II (rare disabling seizures).
+
+- There is no clear evidence that she has had prolonged seizure-free intervals amounting to greater than half the follow-up period to qualify for class IIIB. 
+
+- While she continues to have frequent daily seizures, it seems they are less severe focal onset seizures, with only about 1 generalized convulsive seizure per month. This suggests there has been worthwhile improvement and reduction in severity compared to her baseline, meeting criteria for class IIIA.
+
+- There is no evidence to determine if she has had no appreciable change (class IVB) or if seizures are worse (class IVC) to qualify her for class IV.
+
+In summary, her seizure frequency and pattern are most consistent with Engel class IIIA based on the details provided.
+
+{
+  "score": "IIIA",
+  "reasoning": "The patient is having around 1 seizure per day currently along with more severe secondary generalized seizures about once per month. This frequency of disabling seizures does not qualify her for class I or II, but suggests worthwhile seizure reduction compared to baseline to meet class IIIA criteria." 
+}

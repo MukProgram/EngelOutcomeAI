@@ -1,0 +1,26 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIC (Some disabling seizures after surgery, but free of disabling seizures for at least 2 years).
+
+Here is my reasoning:
+
+- The patient has focal to bilateral convulsive seizures around once every two months. These seizures are disabling, so she does not qualify for Engel class I (Free of disabling seizures).
+
+- The seizures are not rare enough to qualify for Engel class II (Rare disabling seizures). Class II specifies "rare" disabling seizures, whereas this patient has seizures once every 2 months.
+
+- There is no mention of a worthwhile seizure reduction, so Engel class III (Worthwhile improvement) does not apply. 
+
+- While the patient has had seizures since her encephalitis in 2012, the clinical note specifies that she has focal to bilateral convulsive seizures around once every two months. This frequency has been consistent, so her seizures have not gotten worse as in Engel class IV.
+
+- Although the patient did not have surgery, the criteria for Engel IIC most closely matches her situation - she has more than rare disabling seizures after the precipitating event (her encephalitis), but has gone at least 2 years with this consistent seizure frequency.
+
+Therefore, I would assign this patient an Engel score of IIC.
+
+Here is the output in JSON format:
+
+```json
+{
+  "score": "IIC",
+  "reasoning": "The patient has focal to bilateral convulsive seizures around once every two months since having encephalitis in 2012. These seizures are disabling. The frequency of around once every 2 months is more than rare, but has been consistent for over 2 years since the encephalitis. This most closely matches the Engel IIC criteria."
+}
+```
+
+Let me know if you need any clarification or have additional questions!

@@ -1,0 +1,14 @@
+Based on the information provided, I would assign this patient an Engel score of IIB.
+
+Here is my analysis:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is described as having 'more frequent and different seizures' consisting of 'prolonged bilateral episodes of limb shaking with retained awareness.' While the duration makes the neurologist wonder if these could be non-epileptic seizures, he notes that the patient definitely also has epileptic seizures. So there is evidence of continued disabling seizures, though details on exact frequency are not provided. This fits the IIB criteria of 'Rare disabling seizures since surgery.' Without further quantification of the seizure frequency, this is the best fit based on the information given."
+}
+```
+
+The neurologist wonders if some of the seizures could be non-epileptic, but confirms the patient does have epileptic seizures as well. There are continued disabling seizures, but details on frequency are lacking. So IIB for "Rare disabling seizures since surgery" seems the closest match. 
+
+Let me know if any part of my analysis or reasoning needs further clarification! I'm happy to provide additional details if needed.

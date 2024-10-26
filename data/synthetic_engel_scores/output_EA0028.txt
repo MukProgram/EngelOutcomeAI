@@ -1,0 +1,10 @@
+Based on the information provided in the clinical note, here is the assessment using the Engel Outcome Scale criteria:
+
+```json
+{
+  "score": "1A",
+  "reasoning": "The patient is reported to be completely seizure-free since starting levetiracetam treatment 12 months ago. She has not had any further seizures and is not experiencing any medication side effects. This meets the criteria for Engel Class IA - completely seizure-free since starting treatment."
+}
+```
+
+The patient has been seizure-free for the past 12 months since starting levetiracetam treatment. This indicates she is completely seizure-free since starting treatment, meeting the criteria for Engel Class IA. No other Engel scores seem applicable based on the information provided.

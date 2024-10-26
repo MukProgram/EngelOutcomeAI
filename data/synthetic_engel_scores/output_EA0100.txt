@@ -1,0 +1,12 @@
+Based on the information provided, there is not enough evidence to definitively assign an Engel score. The patient had a single witnessed seizure with no prior history of epilepsy. He has not had any seizures since this event over 2 months ago. More information would be needed, particularly related to any recurrence of seizures and his response to treatment, in order to accurately apply the Engel criteria. 
+
+Since an Engel score cannot be reliably assigned, I will return the reasoning without specifying a score:
+
+```json
+{
+  "score": "Insufficient information",
+  "reasoning": "The patient experienced a single witnessed seizure with no prior seizure history. He has not had any seizure recurrence in the over 2 months since this event. More information would be needed regarding any seizure recurrence and response to treatment in order to accurately apply the Engel criteria."
+}
+```
+
+Please let me know if any additional information becomes available that could allow for assigning an Engel score.

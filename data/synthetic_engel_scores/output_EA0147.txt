@@ -1,0 +1,18 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIB.
+
+Here is my reasoning:
+
+The patient continues to have rare disabling seizures since her traumatic brain injury and epilepsy diagnosis in 2012. Specifically, the note states that "Last year she had around 15 generalised tonic clonic seizures." She is also having complex partial seizures manifesting as staring spells, speech arrest, and lip smacking. 
+
+While she has achieved worthwhile seizure reduction on her current medication regimen of levetiracetam, she continues to experience rare disabling seizures consisting of both generalised tonic-clonic seizures as well as complex partial seizures. This fits the criteria for an Engel class IIB score - "Rare disabling seizures since surgery."
+
+Therefore, my assessment is:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient continues to have rare disabling generalized tonic-clonic and complex partial seizures since her epilepsy diagnosis and traumatic brain injury in 2012, indicating an Engel score of IIB."
+}
+```
+
+There is no evidence to support alternate Engel scores based on the information provided.

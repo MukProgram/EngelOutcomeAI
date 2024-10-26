@@ -1,0 +1,10 @@
+Based on the clinical note, here is the assessment using the Engel Outcome Scale:
+
+```json
+{
+  "score": "1A",
+  "reasoning": "The patient has been completely seizure-free since November 2015, which has been over 2 years. This meets the criteria for Engel class 1A - completely seizure-free since surgery/treatment."
+}
+```
+
+The note states that the patient "remains seizure free" since November 2015. This indicates complete freedom from disabling seizures for over 2 years, meeting the criteria for 1A. No other Engel scores seem applicable based on the information provided.

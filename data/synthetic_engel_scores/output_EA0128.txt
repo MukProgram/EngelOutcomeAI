@@ -1,0 +1,8 @@
+Based on the information provided, the patient has:
+
+{
+  "score": "IB", 
+  "reasoning": "The patient has been seizure-free from generalized tonic-clonic seizures for 7 years, which meets criteria for Class I (Free of disabling seizures). However, she continues to have myoclonic jerks, which are considered non-disabling simple partial seizures. This meets criteria for IB (Non disabling simple partial seizures only since surgery/treatment)."
+}
+
+There is no evidence of multiple possible scores for this patient based on the clinical note. The sustained period of seizure freedom from disabling seizures along with continued non-disabling simple partial seizures clearly meets criteria for Engel score IB.

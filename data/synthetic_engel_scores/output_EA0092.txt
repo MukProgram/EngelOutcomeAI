@@ -1,0 +1,10 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is experiencing rare disabling seizures since surgery, as evidenced by the recent cluster of complex partial seizures that required high dose Phenytoin to control. She is not completely seizure-free, but the seizures appear to be relatively rare and controlled with medication adjustments. There is no evidence that she has been seizure-free for at least 2 years, so she does not meet criteria for Engel classes 1C, 2C, or 3B. Overall her seizure control seems improved but not to the level of being free of disabling seizures, warranting an Engel IIB score."
+}
+```
+
+The patient does not clearly fit into any other Engel class based on the information provided. There is no evidence she has been seizure-free for over 2 years or has only rare nocturnal seizures, ruling out classes 1C, 2C, and 2D. There are also no details suggesting a worthwhile seizure reduction meeting class 3A criteria. So I believe Engel IIB is the most appropriate score for this patient.

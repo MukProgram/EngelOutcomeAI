@@ -1,0 +1,24 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IVB (No worthwhile improvement, No appreciable change).
+
+Here is my reasoning:
+
+- The patient has had epilepsy for 6 years, with seizures occurring about 1-2 times per week at onset. He has tried multiple medications (eplim, lamotrigine) but continues to have seizures around once per week.
+
+- There is no clear mention of him having any prolonged seizure-free periods. The note simply states he continues to have seizures around once per week despite medication trials.
+
+- There is no evidence of a worthwhile seizure reduction over time. Again, seizures seem to continue at a consistent weekly frequency over the 6 year course based on the information given.
+
+- He does not fit criteria for scores indicating complete seizure freedom, rare/no disabling seizures, or worthwhile seizure reduction.
+
+As there is no clear evidence of seizure freedom, reduction, or prolonged seizure free intervals, the best fitting score is IVB - no appreciable change. There is not enough information to determine if seizures are worse (IVC), so IVB fits best.
+
+In summary, the patient's seizure frequency and severity appears unchanged over the 6 year course based on the details provided.
+
+Here is the output in JSON format:
+
+```json
+{
+  "score": "IVB",
+  "reasoning": "The patient has had consistent weekly seizures over the 6 year course despite medication trials, with no evidence of prolonged seizure-free periods or worthwhile seizure reduction over time. This fits criteria for score IVB - No appreciable change." 
+}
+```

@@ -1,0 +1,16 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIC",
+  "reasoning": "The patient has a history of simple partial seizures with occasional secondary generalization starting at age 15. She has periods of seizure freedom, with the best period being about 3 years in her early 30s. Currently on lamotrigine 150mg twice daily, she continues to have seizures several times per week, though it is unclear if these are all disabling. She has not had disabling seizures for at least 2 years based on the history provided. Therefore, the best Engel score appears to be IIC - More than rare disabling seizures after surgery, but rare seizures for at least 2 years."
+}
+```
+
+The score of IIC was chosen because:
+
+- She has more than rare disabling seizures currently
+- She has a history of being free of disabling seizures for at least 2 years in her past
+- It is unclear if her current seizures are disabling, so IIC fits better than IIA or IIB
+
+Let me know if you need any clarification or have additional questions!

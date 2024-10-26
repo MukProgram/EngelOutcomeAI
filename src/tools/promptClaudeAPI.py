@@ -1,28 +1,23 @@
-"""
-This script processes epilepsy clinical notes and prompts Claude to generate an Engel score based on each note.
-Claude is further instructed to provide a detailed explanation for the generated Engel score, disregarding the typical post-surgical context of Engel scoring.
-The script reads clinical notes from an input directory, sends each note to Claude for scoring, and saves the outputs, including explanations, to an output directory.
-"""
-
 import os
-import anthropic
 import logging
 import time
+import random
+from anthropic import Anthropic
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
-# Retrieve the Anthropic API key from an environment variable
-API_KEY = os.environ.get('ANTHROPIC_API_KEY')
+# Hardcoded API key (Replace with your actual API key)
+API_KEY = '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'
 if not API_KEY:
-    raise ValueError("Please set the ANTHROPIC_API_KEY environment variable.")
+    raise ValueError("Please set the API_KEY variable.")
 
-# Initialize the Anthropic client
-client = anthropic.Client(api_key=API_KEY)
+# Initialize the Anthropic client with the hardcoded API key
+client = Anthropic(api_key=API_KEY)
 
 # Directories for input notes and output files
-input_dir = 'clinical_notes/'
-output_dir = 'outputs/'
+input_dir = 'data/clinical_notes'
+output_dir = 'output3.5'
 
 # Create the output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
@@ -40,25 +35,62 @@ for note_file in note_files:
         with open(input_path, 'r', encoding='utf-8') as f:
             clinical_note = f.read()
 
-        # Create the prompt for Claude
-        prompt = f"""{anthropic.HUMAN_PROMPT} Please read the following clinical note and generate a plausible Engel score with a detailed explanation for your choice. Ignore the fact that the patient is not post-surgery; instead, provide the probable Engel Score based on the clinical note.
+        # Create the message content
+        message_content = f"""
+Please review the clinical note provided below and assess the patient using the Engel Outcome Scale criteria listed afterward. Assign an Engel score (number and letter) to the patient, even if certain aspects of the criteria are unclear or missing. For this task, ignore whether or not the patient is post-surgery. If and only if there are multiple possible scores with valid reasoning, provide all possible scores and their reasoning as a list.
 
-Clinical Note:
+**Engel Outcome Scale**:
+Class I: Free of disabling seizures
+
+IA: Completely seizure-free since surgery
+IB: Non disabling simple partial seizures only since surgery
+IC: Some disabling seizures after surgery, but free of disabling seizures for at least 2 years
+ID: Generalized convulsions with antiepileptic drug withdrawal only
+
+Class II: Rare disabling seizures (“almost seizure-free”)
+
+IIA: Initially free of disabling seizures but has rare seizures now
+IIB: Rare disabling seizures since surgery
+IIC: More than rare disabling seizures after surgery, but rare seizures for at least 2 years
+IID: Nocturnal seizures only
+
+Class III: Worthwhile improvement
+
+IIIA: Worthwhile seizure reduction
+IIIB: Prolonged seizure-free intervals amounting to greater than half the follow-up period, but not less than 2 years
+
+Class IV: No worthwhile improvement
+
+IVA: Significant seizure reduction
+IVB: No appreciable change
+IVC: Seizures worse.
+
+**Clinical Note:**
 {clinical_note}
 
-{anthropic.AI_PROMPT}"""
+**Output Requirements:**
+1. **Engel Score**: Provide the score as a number and letter (e.g., "1A").
+2. **Reasoning**: Write a thorough explanation for the chosen score, detailing the clinical reasoning behind your decision.
+3. **Variations** If and only if there are multiple possible scores with valid reasoning, provide all possible scores and their reasoning as a list.
 
-        # Call the Claude API
-        response = client.completion(
-            prompt=prompt,
-            model="claude-1",  # Update to the specific model you have access to
-            max_tokens_to_sample=2000,  # Allows for longer responses
-            temperature=0.7,  # Moderate temperature for balanced output
-            stop_sequences=[anthropic.HUMAN_PROMPT],
+Return the results in JSON format, structured as follows:
+```json
+{{
+  "score": "<Engel Score>",
+  "reasoning": "<Detailed clinical reasoning>"
+}}
+"""
+        
+        # Format the prompt as per Anthropic API requirements
+        prompt = f"\n\nHuman: {message_content}\n\nAssistant:"
+
+        response = client.completions.create(
+            model="claude-2",
+            max_tokens_to_sample=2000,
+            temperature=0.7,
+            prompt=prompt
         )
-
-        # Extract the completion text
-        output_text = response['completion'].strip()
+        output_text = response.completion.strip()
 
         # Save the output to a file
         with open(output_path, 'w', encoding='utf-8') as f:
@@ -66,8 +98,11 @@ Clinical Note:
 
         logging.info(f"Processed '{note_file}' and saved the output to '{output_path}'.")
 
-        # Optional: Pause between requests to respect rate limits
-        time.sleep(1)  # Adjust the sleep time as needed
+        time.sleep(random.uniform(2, 5))  # rate limit
 
     except Exception as e:
         logging.error(f"Failed to process '{note_file}': {e}")
+        if '429' in str(e):
+            logging.info("Rate limit exceeded. Sleeping for 60 seconds.")
+            time.sleep(60)
+            continue

@@ -1,0 +1,12 @@
+Based on the information provided in the clinical note, there are insufficient details to definitively assign an Engel score. The note states that Mr. Wilkins has had around 5 episodes of loss of consciousness over the past few months, with the first episodes happening in bed. He also had one witnessed seizure. However, there is no mention of him having epilepsy surgery, which is a prerequisite for assigning an Engel score. 
+
+Without surgery details, the best I can determine is:
+
+```json
+{
+  "score": "N/A",
+  "reasoning": "An Engel score requires the patient to have undergone epilepsy surgery, but there is no mention in the clinical note whether Mr. Wilkins has had prior surgery. As such, there is insufficient information to assign a definitive Engel outcome score."
+}
+```
+
+If Mr. Wilkins were to have epilepsy surgery, the score would depend on his postoperative seizures. But since those details are not provided, an Engel score cannot be assigned based on the information given. Let me know if any additional clinical details can be provided.

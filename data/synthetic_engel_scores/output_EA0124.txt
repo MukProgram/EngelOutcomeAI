@@ -1,0 +1,20 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIB.
+
+My reasoning is as follows:
+
+- The patient has a diagnosis of epilepsy with two seizure types: generalized tonic-clonic seizures (last occurred 3 years ago) and absence seizures (occur about once per week currently).
+
+- The absence seizures are described as the patient pausing her task, her head turning to one side, staring vacantly, and lasting a few seconds. These are consistent with disabling seizures.
+
+- While she has been seizure-free from generalized tonic-clonic seizures for 3 years, she continues to have disabling absence seizures about once per week.
+
+- This fits the criteria for Engel IIB: "Rare disabling seizures since surgery." In this case, even though the patient has not had surgery, she has rare disabling generalized seizures but continues to have disabling absence seizures since the undefined past treatment point.
+
+Therefore, I would assign this patient an Engel score of IIB. There is no ambiguity in the information provided to suggest an alternative score.
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient has rare disabling generalized tonic-clonic seizures (last occurred 3 years ago) but continues to have disabling absence seizures about once per week currently. This fits the Engel IIB criteria of rare disabling seizures but continued disabling seizures since the undefined past treatment point."
+}
+```

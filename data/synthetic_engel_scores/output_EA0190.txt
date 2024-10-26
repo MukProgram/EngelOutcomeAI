@@ -1,0 +1,20 @@
+Based on the information provided, this patient appears to fit into Engel class IA - Completely seizure-free since surgery.
+
+My reasoning is:
+
+- Patient had right hippocampectomy in 2018
+- He has been seizure free since the surgery in 2018
+- Prior to surgery, he was having seizures several times a week despite multiple medications
+- He is currently on lamotrigine which has been the most effective medication for him
+- He has been able to return to work and start driving lessons, suggesting no limiting seizures
+
+There is no evidence of any seizures or even auras since the 2018 surgery. Therefore, I would categorize him as Engel class IA - Completely seizure-free since surgery.
+
+The output in JSON format:
+
+```json
+{
+  "score": "1A",
+  "reasoning": "Patient had right hippocampectomy in 2018 and has been completely seizure free since then, allowing him to return to work and driving. He was previously refractory to medications with seizures several times per week." 
+}
+```

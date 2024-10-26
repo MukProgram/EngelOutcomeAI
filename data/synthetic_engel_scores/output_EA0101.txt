@@ -1,0 +1,10 @@
+Based on the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IA",
+  "reasoning": "The note states that the patient is 'Seizure free for years' while taking Epilim chrono 400mg twice daily. This indicates she has been completely seizure-free since an unspecified past date, meeting criteria for Engel score IA. There is no mention of any seizures, simple partial or otherwise, in the years since she was last seen by neurology in 2010. The lack of any reported seizures in this significant multi-year timeframe supports classifying her seizure control as IA."
+}
+```
+
+The note does not provide enough information to determine any alternative Engel scores. The patient seems clearly categorized as IA based on the information provided. If additional details on her seizure history were available, other scores could potentially be justified, but the note is most consistent with IA.

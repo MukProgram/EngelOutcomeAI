@@ -1,0 +1,12 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIC.
+
+Here is my analysis:
+
+```json
+{
+  "score": "IIC",
+  "reasoning": "The patient is reported to have focal seizures around once or twice per month currently. This frequency of disabling seizures would not qualify him for scores IA, IB, IC, IIA, IIB, IID, IIIA, IIIB, IVA, or IVB. Score IIC indicates 'More than rare disabling seizures after surgery, but rare seizures for at least 2 years.' Even though the patient has not had surgery, he meets the criteria for rare/infrequent seizures over an implied period of at least 2 years based on the timeline provided. Without more specifics on the seizure frequency or duration of active epilepsy, IIC appears to be the best fit."
+}
+```
+
+There is no evidence to support assigning multiple scores here. The provided clinical note states the patient has focal seizures around once or twice per month, which matches most closely with score IIC based on the details available. Let me know if you need any clarification or have additional information to share regarding this patient's case.

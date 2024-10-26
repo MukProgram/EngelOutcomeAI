@@ -1,0 +1,22 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIB.
+
+My reasoning is:
+
+- The patient is experiencing "rare disabling seizures" in the form of generalized tonic-clonic seizures occurring about 4 times in the past 3 weeks. This fits the definition of an Engel IIB score ("Rare disabling seizures since surgery").
+
+- While she has almost complete freedom from myoclonic jerks ("about one a week"), these are not considered disabling seizures. Only the generalized tonic-clonic seizures are described as disabling.
+
+- She has prolonged seizure-free intervals of up to 5 weeks, but this does not meet the requirement of greater than 2 years seizure free to qualify for an Engel IIIB score.
+
+- No other Engel score better describes her current seizure status.
+
+In JSON format:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is experiencing rare disabling generalized tonic-clonic seizures occurring about 4 times in the past 3 weeks. This fits the IIB criteria of rare disabling seizures since surgery. The myoclonic jerks are not considered disabling."
+}
+```
+
+Let me know if you need any clarification or have additional questions!

@@ -1,0 +1,8 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IIB.
+
+{
+  "score": "IIB",
+  "reasoning": "The patient is experiencing focal seizures with altered awareness several times per month. This frequency of disabling seizures would not qualify as 'seizure-free' or 'rare disabling seizures' as outlined in Engel classes I or IIA. However, the seizures are not frequent enough to qualify for classes IIC, III, or IV which require more frequent seizures. Therefore, class IIB 'Rare disabling seizures since surgery' is the best fit."
+}
+
+The note does not provide enough information to confidently provide alternate scores. If more clinical history was available, it's possible the patient could also fit classes IA or IB given the focal nature of his seizures. But based solely on the information presented, IIB appears to be the only justifiable Engel score.

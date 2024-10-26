@@ -1,0 +1,17 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is experiencing rare disabling seizures since her surgery, specifically jerks occurring around once a month that seem to coincide with the time her period would usually start. This fits the criteria for an Engel score of IIB: 'Rare disabling seizures since surgery'. While the seizures are not completely controlled, they have significantly improved compared to prior to surgery. The note does not provide enough information to justify alternate Engel scores."
+}
+```
+
+The key details supporting an Engel score of IIB are:
+
+- Patient is experiencing seizures, specifically "jerks" occurring around once per month
+- These seizures are considered disabling, as medication adjustments are being made to try to better control them 
+- The seizures started after the patient's epilepsy surgery ("since surgery")
+- The seizures are relatively infrequent at around once per month ("rare")
+
+There is no evidence to support alternate Engel scores with the information provided. The reasoning provided covers the clinical details given to assign this patient an Engel score of IIB.

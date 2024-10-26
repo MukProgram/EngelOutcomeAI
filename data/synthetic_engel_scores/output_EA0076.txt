@@ -1,0 +1,22 @@
+Based on the information provided in the clinical note, there is not enough evidence to definitively assign an Engel score. The note states that Mr. Summers has been having seizure-like episodes for around 1 year that occur up to several times per week. However, it is unclear if these episodes are actually epileptic seizures or dissociative seizures. The note states "I do not think that these are epileptic seizures and are more likely to be dissociative seizures."
+
+Since the Engel scale categorizes outcomes based on seizure frequency and seizure freedom after epilepsy surgery, and there is uncertainty around whether Mr. Summers actually has epilepsy, there is not enough evidence to assign a definitive score. 
+
+However, here is my attempt at reasoning through the possibilities:
+
+If the episodes are confirmed to be dissociative seizures rather than epileptic seizures, then the Engel scale would not apply. 
+
+If further testing confirms an epilepsy diagnosis, here are some possibilities:
+
+- Score IVB (No appreciable change) - He has been having frequent seizures for the past year with no noted change, so this could fit if the seizures are confirmed to be epileptic.
+
+- Score IIIA (Worthwhile seizure reduction) - If testing provides more clarity that these are epileptic seizures, and if they represent a reduction from some previously higher baseline frequency, this score could apply. 
+
+Given the uncertainty in the diagnosis and lack of critical details needed to apply the Engel criteria, I do not have enough information to assign a definitive score. Please provide updated clinical details if an Engel score is still needed.
+
+```json
+{
+  "score": "Not enough information to assign score",
+  "reasoning": "Uncertainty if episodes are epileptic seizures or dissociative seizures. Lack of critical details needed to apply Engel criteria." 
+}
+```

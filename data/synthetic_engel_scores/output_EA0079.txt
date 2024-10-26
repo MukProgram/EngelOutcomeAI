@@ -1,0 +1,22 @@
+Based on the information provided, I would assign this patient an Engel score of IIB ("Rare disabling seizures since surgery").
+
+My reasoning is:
+
+- The patient has nocturnal generalized tonic-clonic seizures associated with learning difficulties and symptomatic epilepsy. EEG shows sharpened waveforms consistent with epilepsy.
+
+- He gets around 1 disabling generalized tonic-clonic seizure per month. This frequency of disabling seizures meets criteria for "rare disabling seizures" in the Engel scale.
+
+- There is no mention of the patient having epilepsy surgery, so I cannot assign a score based on post-surgical seizure frequency. However, for this task we were instructed to ignore whether the patient was post-surgery.
+
+- No other Engel score seems applicable based on the information provided. Even though seizure frequency and types are stable and he does not seem to have seizures during the day, having 1 disabling seizure per month still meets Engel IIB criteria.
+
+So in summary, I would assign an Engel score of IIB with the reasoning that he continues to have rare disabling nocturnal generalized seizures. There is no evidence to support alternate scores.
+
+Here is the output in JSON format:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient has symptomatic epilepsy with nocturnal generalized tonic-clonic seizures occurring around once per month. This frequency of disabling seizures meets criteria for 'rare disabling seizures' in the Engel scale, corresponding to a score of IIB."
+}
+```

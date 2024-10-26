@@ -1,0 +1,18 @@
+Based on the information provided in the clinical note, here is my assessment of the patient's Engel score:
+
+```json
+{
+  "score": "IIB",
+  "reasoning": "The patient is experiencing rare disabling seizures since the recent onset of her condition about 6 months ago. She has generalized tonic-clonic seizures occurring once or twice a month, with a recent cluster of 3 seizures in one day requiring an ER visit. She also has staring spells occurring 3-5 times per week. These seizures are occurring despite antiepileptic drug treatment with sodium valproate. However, the frequency of disabling seizures appears to meet criteria for Class II - Rare Disabling Seizures. Specifically, subclass IIB fits with rare disabling seizures since the onset of the epilepsy."
+}
+```
+
+The key factors in determining the Engel IIB score are:
+- Recent onset of disabling seizures around 6 months ago 
+- Occasional generalized tonic-clonic seizures, up to 1-2 per month
+- Recent cluster of 3 disabling seizures in one day
+- Frequent non-disabling staring spells occurring multiple times per week
+- Seizures occurring despite antiepileptic medication
+- Overall pattern fitting category of rare disabling seizures
+
+Let me know if you need any clarification or have additional questions!

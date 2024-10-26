@@ -1,0 +1,22 @@
+Based on the information provided in the clinical note, I would assign this patient an Engel score of IVB (No appreciable change).
+
+Here is my reasoning:
+
+- The note states that the patient has a diagnosis of non-epileptic attack disorder (dissociative seizures) as well as focal seizures with secondary generalization. This indicates she has a mixed disorder with both epileptic and non-epileptic seizures.
+
+- There is no clear mention of the patient being seizure-free for any prolonged period either before or after surgery. The note mentions she recently had a cluster of seizures requiring hospital admission, indicating ongoing seizure activity rather than seizure freedom.
+
+- While the medication changes led to some subjective improvement in how the patient feels, there is no objective evidence presented of a reduction in seizure frequency, duration or severity. 
+
+- The note states "I think most of her problems are down to the nonepileptic attacks (dissociative seizures)." This suggests the non-epileptic events are the major contributor to her issues rather than the epileptic seizures. However, there is still no evidence of worthwhile improvement in either seizure type.
+
+- Given there is no evidence the patient meets criteria for seizure freedom, worthwhile improvement, or even significant seizure reduction, I would assign an Engel score of IVB - no appreciable change. This indicates her epileptic seizures have not significantly improved with treatment.
+
+In summary, while some medication and dosage changes were made, the information provided does not demonstrate any categorical improvements in seizure control, frequency or severity. Therefore I assigned a score reflecting no worthwhile change has occurred.
+
+Let me know if you need any clarification or have additional questions!
+
+{
+  "score": "IVB",
+  "reasoning": "The patient has ongoing seizures with no evidence of worthwhile improvement, reduction in frequency/severity, or prolonged seizure freedom. The medication changes provide some subjective improvement but no objective seizure improvement." 
+}
