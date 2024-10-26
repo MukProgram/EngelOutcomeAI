@@ -1,0 +1,13 @@
+Engel Score: IIB
+
+Explanation: Based on the information provided, the patient has experienced rare disabling seizures since the onset of his epilepsy in June 2018. Specifically, he has had:
+
+- Several episodes where he goes into a "day dream" with altered awareness. These appear to be focal seizures with impaired awareness.
+
+- Three episodes during sleep where he shook his arms and made choking noises. These appear to be focal to bilateral tonic-clonic seizures. 
+
+While not specifically stated, it seems reasonable to characterize these seizures as disabling given the descriptions provided.
+
+The Engel classification describes Class II seizures as "rare disabling seizures" or "almost seizure-free." Subcategory IIB is defined as "rare disabling seizures since surgery." Although the patient has not undergone surgery, he meets the main criteria of having rare disabling seizures since the onset of his epilepsy.
+
+Therefore, based on having rare but disabling seizures since onset of his epilepsy in June 2018, I have assigned this patient an Engel score of IIB. I am reasonably confident in this classification based on the seizure history provided, though there are some ambiguities in the clinical note that introduce a degree of uncertainty. Please let me know if you need any clarification or have additional questions!

@@ -1,0 +1,12 @@
+Engel Score: IC
+
+Explanation:
+Based on the clinical note, this patient has a diagnosis of longstanding epilepsy with generalized tonic-clonic seizures. She has been on treatment with Epilim for many years and has seen a reduction in her seizure frequency from about once per year down to one seizure every 2-3 years. Her longest seizure-free period has been 4 years while on Epilim. 
+
+As per the Engel scale criteria:
+- Class I is for patients who are free of disabling seizures
+- Subcategory IC is defined as "Some disabling seizures after surgery, but free of disabling seizures for at least 2 years"
+
+While this patient has not had surgery, she meets the criteria for Subcategory IC based on having infrequent disabling generalized tonic-clonic seizures, with seizure-free intervals of up to 4 years while on Epilim therapy. Her seizures are controlled enough to be considered "free of disabling seizures" for extensive periods of over 2 years.
+
+Therefore, based on the clinical details provided, I have assigned this patient an Engel score of IC. Please let me know if you need any clarification or have additional questions!

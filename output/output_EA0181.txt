@@ -1,0 +1,13 @@
+Engel Score: IVA
+
+Explanation: Based on the information provided in the clinical note, I have assigned this patient an Engel score of IVA (Significant seizure reduction). The key details supporting this classification are:
+
+- The patient has symptomatic epilepsy due to previous neurocysticercosis and gets frequent focal dyscognitive seizures in clusters. This indicates she has poorly controlled disabling seizures at baseline.
+
+- She recently had a cluster of around 10-15 focal dyscognitive seizures over 2 days, indicating frequent disabling seizures.
+
+- She has tried levetiracetam in the past but it caused side effects. She is currently taking lamotrigine 150mg twice daily but is still having breakthrough seizures.
+
+- The plan is to uptitrate her lamotrigine dose to see if better seizure control can be achieved, and if not, to add in zonisamide.
+
+Overall, while she has disabling seizures that are not well-controlled on her current medications, the plan to optimize medications indicates the providers believe there is potential for worthwhile seizure reduction with adjustments. However, there is no data yet to indicate she has achieved at least 6 months of seizure freedom or prolonged seizure free intervals to warrant a higher Engel score. Therefore, I assigned an Engel score of IVA to indicate potential for meaningful improvement short of complete seizure control. Let me know if you need any clarification or have additional questions!

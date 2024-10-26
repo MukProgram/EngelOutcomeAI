@@ -1,0 +1,12 @@
+Engel Score: IIID
+
+Explanation: Based on the information provided, the patient is experiencing focal seizures with altered awareness approximately every 3 weeks. This frequency of seizures would be considered "nocturnal seizures only" according to the Engel scale criteria. Specifically:
+
+- The patient is not free of disabling seizures, ruling out Class I
+- The patient is not having rare disabling seizures, ruling out Class II
+- There is no evidence of a worthwhile seizure reduction, ruling out Class III
+- The seizures are not worse, ruling out Class IVC
+
+Therefore, the best fit seems to be Class IIID - "Nocturnal seizures only." The seizures are relatively infrequent at approximately once every 3 weeks. While not explicitly stated to be nocturnal, the frequency seems most consistent with Class IIID compared to the other classifications.
+
+In summary, given the seizure frequency of approximately once every 3 weeks, along with the lack of clear evidence fitting other classifications, Class IIID appears to be the best option. However, there is some uncertainty since details are limited in the clinical note. Please let me know if you need any clarification or have additional questions!

@@ -1,0 +1,3 @@
+Engel Score: IIB
+
+Explanation: Based on the clinical note, the patient has rare disabling seizures since starting medication, as he has 4-5 episodes per year where he becomes unresponsive with slight hand shaking lasting up to 3 minutes. This fits the criteria for Engel score IIB - "Rare disabling seizures since surgery." Even though the patient has not had surgery, the Engel scale is still applicable for assessing seizure frequency and severity after any epilepsy treatment. The seizures are disabling because he becomes unresponsive, but they are considered rare at 4-5 per year. Therefore, I assigned an Engel score of IIB.

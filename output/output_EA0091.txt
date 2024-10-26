@@ -1,0 +1,13 @@
+Engel Score: IIB
+
+Explanation: Based on the information provided in the clinical note, I have assigned this patient an Engel score of IIB. The key details that support this score are:
+
+1) The patient continues to have "a couple of episodes a week of short-lived vacancy." These episodes involve the patient simply collapsing, indicating they are likely disabling seizures.
+
+2) The note states the family recognizes she only has episodes if overtired or overexcited. This implies she has rare disabling seizures, rather than being completely seizure free.  
+
+3) While increasing the medication (Carbamazepine) has been helpful in reducing the number of episodes, she continues to have "a couple a week." This indicates there has not been complete seizure control, but rather a reduction in disabling seizures.
+
+4) An Engel score of IIB corresponds to "Rare disabling seizures since surgery." Although the patient did not actually undergo surgery, the clinical details match this description of continued rare disabling seizures after an intervention (medication adjustment).
+
+In summary, the patient continues to have rare disabling seizures on medication, meeting criteria for an Engel score of IIB. Please let me know if you need any clarification or have additional questions!

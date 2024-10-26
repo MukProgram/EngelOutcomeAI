@@ -1,0 +1,10 @@
+Based on the information provided, I would assign this patient an Engel score of:
+
+IB
+
+Explanation:
+The patient has a diagnosis of focal epilepsy, in addition to dissociative seizures and a history of mild head injury. The note states that there has been "significant improvement" in seizures since increasing the lamotrigine dose to 200mg twice daily. Specifically, it says "I think that the focal seizures are completely under control on the dose of lamotrigine." This suggests the patient is free of disabling focal seizures on medication, meeting criteria for Engel class IB ("Non disabling simple partial seizures only since surgery"). 
+
+The patient continues to experience "dizzy spells" lasting a few minutes, with altered hearing. Video EEG monitoring captured some of these events and found no epileptiform activity, suggesting they are nonepileptic/dissociative seizures rather than focal epileptic seizures. The note confirms the provider reviewed videos of these events that seemed nonepileptic. 
+
+So in summary - the focal epilepsy appears to be well-controlled on medication (lamotrigine), meeting IB criteria. The remaining seizures are dissociative rather than epileptic in nature. Even though the patient did not have surgery, class IB fits best based on seizure control. Please let me know if you need any clarification or have additional questions!

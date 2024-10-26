@@ -1,0 +1,15 @@
+Based on the information provided, I would assign this patient an Engel score of:
+
+IIB
+
+Explanation:
+The patient is described as having "around 2-3 seizures per month" currently. This frequency of disabling seizures would fall into the Class II category of the Engel scale, indicating "rare disabling seizures" or being "almost seizure-free." 
+
+Specifically, the IIB subclassification states "Rare disabling seizures since surgery." Although the patient has not actually undergone epilepsy surgery, the provided description most closely aligns with having rare/infrequent disabling seizures at the present time.
+
+The other Class II subclassifications do not fit as well: 
+- IIA refers to being initially seizure-free after surgery but having rare seizures now, which does not apply.  
+- IIC refers to having more than rare disabling seizures currently, which does not match the description of 2-3 per month.
+- IID refers to nocturnal seizures only, whereas this patient has seizures while awake/active as described.
+
+In summary, based on having approximately 2-3 disabling seizures per month at present, the Engel score that best reflects this frequency is IIB. Let me know if you need any clarification or have additional questions!

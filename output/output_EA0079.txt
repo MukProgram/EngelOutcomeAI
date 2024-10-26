@@ -1,0 +1,19 @@
+Engel Score: IID
+
+Explanation: Based on the clinical note, the patient (Mr. Owen Evans) has the following key information related to assigning an Engel score:
+
+1) He has had epilepsy since age 3 years, now 38 years duration. 
+
+2) He has nocturnal generalized tonic-clonic seizures associated with mild learning difficulties and symptomatic epilepsy. 
+
+3) His EEG shows sharp waveforms in frontal leads, suggesting a focal onset.
+
+4) His seizures have been stable over the past few years with around 1 generalized tonic-clonic seizure per month. 
+
+5) He is currently taking two anti-epileptic medications - levetiracetam and carbamazepine. 
+
+6) The plan is to uptitrate the carbamazepine dose to see if it improves seizure control.
+
+Based on these details, the best Engel class appears to be IID - "Nocturnal seizures only." He has disabling nocturnal generalized tonic-clonic seizures about once per month despite anti-epileptic medications. While he may have had daytime seizures in the past, the note only documents current nocturnal seizures.
+
+The other Engel categories do not accurately reflect his current seizure frequency and severity as documented. However, if further details emerge such as daytime seizure activity, a different Engel class could be justified. I chose IID based on the available information showing disabling nocturnal seizures despite medications.

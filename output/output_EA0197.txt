@@ -1,0 +1,7 @@
+Engel Score: IIB
+
+Explanation: Based on the information provided, the patient is experiencing rare disabling seizures since the unspecified treatment/surgery, with a frequency of about 1-2 seizures per month currently. This fits the criteria for Engel score IIB ("Rare disabling seizures since surgery"). 
+
+Specifically, it is stated that his baseline was around 1-2 seizures per year, indicating they were relatively rare initially. However, things have recently gotten worse and he is now having 1-2 seizures per month. While an increase in frequency, this still averages out to less than 1 seizure per week, meeting the definition of "rare" according to Engel criteria. Additionally, there is no mention that the seizures are no longer disabling, so it is reasonable to assume they remain disabling in nature.
+
+The lack of details around the patient's surgery/treatment history and timeline makes it difficult to definitively rule in or out some of the other Class II categories like IIA ("Initially free of disabling seizures but has rare seizures now"). However, given the information provided, IIB appears to be the best fit. The explanation notes that he has had a worthwhile seizure reduction in the past and continued efforts are being made to better control his epilepsy, supporting that he has seen improvements, though he continues to have rare disabling seizures.

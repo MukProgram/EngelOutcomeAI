@@ -1,0 +1,6 @@
+Based on the information provided, I would assign this patient an Engel score of IB. 
+
+Explanation:
+The patient has a diagnosis of focal onset epilepsy (occipital) and is currently taking levetiracetam 750mg twice daily. The notes state that the patient has not had any further seizures since increasing the levetiracetam dose. Her seizure types are described as focal seizures with left arm movement as well as a focal to bilateral convulsive seizure in 2019. Her 2019 MRI showed a right occipital lobe infarct. 
+
+According to the Engel scale criteria, class IB refers to "Non disabling simple partial seizures only since surgery." Although this patient has not undergone surgery, the intent of this category seems to capture patients who have only had non-disabling focal/partial seizures after an intervention. In this case, the intervention was increasing the dose of levetiracetam, after which she has been seizure-free. Even though she experienced a focal to bilateral convulsive seizure in 2019, the notes suggest she has only had non-disabling focal seizures involving left arm movement since the medication adjustment. Therefore, IB appears to be the best match based on the information provided.
