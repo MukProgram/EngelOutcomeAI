@@ -63,9 +63,9 @@ def upload(uri: str, username: str, password: str, data: str):
     execute_query(uri, username, password, rel_query, rel_params)
 
 if __name__ == "__main__":
-    uri = "neo4j+s://a3ccaeb7.databases.neo4j.io"
+    uri = "neo4j+s://8726e09d.databases.neo4j.io"
     user = "neo4j"
-    password = "TzR6rQkvmPBm25_LJcd9AIclvx4sgH4z9mKqfbQVqXI"
+    password = "hGXErMhwOXlihaWz4OwywjWnhO0UmwVgBEc9Fo0tAM"
 
     # Example data structure
     data = {
