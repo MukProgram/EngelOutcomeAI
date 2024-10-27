@@ -31,27 +31,32 @@ uploaded_file = st.sidebar.file_uploader("Drag and drop your patient notes", typ
 
 st.title("Predicted Engel Score")
 
+if 'score_generated' not in st.session_state:
+    st.session_state['score_generated'] = False
+
 if uploaded_file:
-    with st.spinner('Generating...'):
-        time.sleep(5)
-    # Example score calculation (replace with actual calculation logic)
-    st.metric("Engel Score", 5)
+    if not st.session_state['score_generated']:
+        with st.spinner('Generating...'):
+            time.sleep(5)  # Simulate generation delay
+
+        # Example score calculation (replace with actual calculation logic)
+        st.metric("Engel Score", 5)
+        st.session_state['score_generated'] = True  # Set flag to avoid re-generating
+
+    st.write("---")
+    st.subheader("Explanation of the Prediction")
+
+    # Explanation text
+    explanation_text = "The reason we have this Engel score is due to various factors including the patient's medical history and symptoms."
+
+    # Button to trigger explanation animation
+    if st.button("Show Explanation"):
+        display_text_animated(explanation_text)
+
 else:
     st.write("Please upload a file to view the Engel Score")
 
-st.write("---")
-st.subheader("Explanation of the Prediction")
 
-# Sample explanation text
-explanation_text = "The reason we have this Engel score is due to various factors including the patient's medical history and symptoms."
-
-# Placeholder for explanation text
-explanation_placeholder = st.empty()
-
-# Button to trigger animation
-if st.button("Show Explanation"):
-    # Animate the text display
-    display_text_animated(explanation_text)
 
 # Hide Streamlit style
 hide_streamlit_style = """

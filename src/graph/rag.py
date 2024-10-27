@@ -22,8 +22,10 @@ def retrieve_knowledge_graph_context(clinical_entities):
     """
     query = """
     MATCH (n)-[r]->(m)
-    WHERE ANY(entity IN $clinical_entities WHERE n.name CONTAINS entity OR m.name CONTAINS entity)
-    RETURN n.name AS Entity1, type(r) AS Relationship, m.name AS Entity2
+    WHERE ANY(entity IN $clinical_entities WHERE n.name = entity OR m.name = entity)
+    RETURN n.name AS Entity1, type(r) AS Relationship, m.name AS Entity2, r.weight AS Weight
+    ORDER BY Weight DESC LIMIT 3
+
     """
     with driver.session() as session:
         result = session.run(query, clinical_entities=clinical_entities)
