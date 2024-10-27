@@ -28,7 +28,7 @@ def retrieve_knowledge_graph_context(clinical_entities):
         data = [{"Entity1": record["Entity1"], "Relationship": record["Relationship"], "Entity2": record["Entity2"]} for record in result]
         return data
 
-def prepare_input_for_gemini(clinical_notes, knowledge_graph_data):
+def prepare_input_for_gemini(clinical_ner, knowledge_graph_data):
     """
     Prepares the input for the Gemini API.
     :param clinical_notes: Original clinical notes.
@@ -37,46 +37,56 @@ def prepare_input_for_gemini(clinical_notes, knowledge_graph_data):
     """
     context_text = " ".join([f"{data['Entity1']} ({data['Relationship']}) {data['Entity2']}" for data in knowledge_graph_data])
     prompt = f"""
-    Clinical Notes: {clinical_notes}
+    Clinical Notes: {clinical_ner}
     
     Context from Knowledge Graph: {context_text}
     
     Based on this information, predict the Engel score and provide reasoning for your prediction.
+    Class I: Free of disabling seizures
+
+    IA: Completely seizure-free since surgery
+    IB: Non disabling simple partial seizures only since surgery
+    IC: Some disabling seizures after surgery, but free of disabline seizures for at least 2 years
+    ID: Generalized convulsions with antiepileptic drug withdrawal only
+
+    Class II: Rare disabling seizures (“almost seizure-free”)
+
+    IIA: Initially free of disabling seizures but has rare seizures now
+    IIB: Rare disabling seizures since surgery
+    IIC: More than rare disabling seiuzres after surgery, but rare seizures for at least 2 years
+    IID: Nocturnal seizures only
+
+    Class III: Worthwhile improvement
+
+    IIIA: Worthwhile seiuzre reduction
+    IIIB: Prolonged seiuzre-free intervals amounting to greater than half the follow-up period, but not less than 2 years
+    Class IV: No worthwhile improvement
+    IVA: Significant seizure reduction
+    IVB: No appreciable change
+    IVC: Seizures worse
+    
     """
     return prompt
 
+# ret input text for predictive model
 def call_gemini_api(prompt):
     """
     Calls the Gemini API to get Engel score and explanation.
     :param prompt: The input prompt for the Gemini API.
     :return: Response from the Gemini API.
     """
-    url = "https://api.gemini.com/v1/engelscore"  # Replace with the actual Gemini API endpoint
+    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=YAIzaSyDHWaeH-sr83M36jjfFDtG0rK7iS14V1C0"  # Replace with the actual Gemini API endpoint
     headers = {
-        "Authorization": "Bearer YOUR_GEMINI_API_KEY",  # Replace with your Gemini API key
+        "Authorization": "AIzaSyDHWaeH-sr83M36jjfFDtG0rK7iS14V1C0",  # Replace with your Gemini API key
         "Content-Type": "application/json"
     }
     data = {
         "prompt": prompt,
-        "max_tokens": 150  # Adjust based on your requirements
+        "max_tokens": 500  # Adjust based on your requirements
     }
     
     response = requests.post(url, headers=headers, json=data)
     return response.json()
-
-def generate_synthetic_data(num_samples):
-    """
-    Generates synthetic clinical notes, Engel scores, and explanations.
-    :param num_samples: Number of synthetic samples to generate.
-    :return: List of tuples containing clinical notes, Engel scores, and explanations.
-    """
-    synthetic_data = []
-    for _ in range(num_samples):
-        clinical_note = f"Patient with condition {random.choice(['A', 'B', 'C'])} experiences symptoms."
-        engel_score = random.uniform(0, 4)  # Engel scores range from 0 to 4
-        explanation = "This score is based on the patient's condition and treatment history."
-        synthetic_data.append((clinical_note, engel_score, explanation))
-    return synthetic_data
 
 class RAGModel(nn.Module):
     def __init__(self, embedding_dim):
