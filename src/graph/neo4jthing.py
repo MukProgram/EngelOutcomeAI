@@ -8,8 +8,11 @@ class Neo4jHandler:
         self.driver.close()
 
     def create_node(self, label, properties):
-        with self.driver.session() as session:
-            session.write_transaction(self._create_node, label, properties)
+        try:
+            with self.driver.session() as session:
+                session.write_transaction(self._create_node, label, properties)
+        except Exception as e:
+            print(f"Error creating node: {e}")
 
     @staticmethod
     def _create_node(tx, label, properties):
@@ -17,8 +20,11 @@ class Neo4jHandler:
         tx.run(query, properties=properties)
 
     def create_relationship(self, start_node_label, start_node_id, end_node_label, end_node_id, relationship_type):
-        with self.driver.session() as session:
-            session.write_transaction(self._create_relationship, start_node_label, start_node_id, end_node_label, end_node_id, relationship_type)
+        try:
+            with self.driver.session() as session:
+                session.write_transaction(self._create_relationship, start_node_label, start_node_id, end_node_label, end_node_id, relationship_type)
+        except Exception as e:
+            print(f"Error creating relationship: {e}")
 
     @staticmethod
     def _create_relationship(tx, start_node_label, start_node_id, end_node_label, end_node_id, relationship_type):
@@ -32,9 +38,9 @@ class Neo4jHandler:
 
 # Example usage
 if __name__ == "__main__":
-    uri = "bolt://localhost:7687"  # Change to your Neo4j URI
-    user = "neo4j"                  # Change to your Neo4j username
-    password = "password"            # Change to your Neo4j password
+    uri = "neo4j+s://8726e09d.databases.neo4j.io"  # Ensure this is correct
+    user = "neo4j"  # Confirm this
+    password = "hGXErMhwOXlihaWz4OwywjWnhO0UmwVgBEc9Fo0tAM"  # Confirm this
 
     neo4j_handler = Neo4jHandler(uri, user, password)
 
@@ -47,3 +53,4 @@ if __name__ == "__main__":
 
     # Close the connection
     neo4j_handler.close()
+

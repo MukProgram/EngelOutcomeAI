@@ -38,25 +38,50 @@ with open(output_csv, mode='w', newline='') as csv_file:
             with open(engel_score_path, 'r') as engel_score_file:
                 engel_score_content = engel_score_file.read()
 
-                # Find all JSON blocks in the file
-                json_matches = re.findall(json_pattern, engel_score_content, re.DOTALL)
+    def extract_json(text):
+        json_pattern = r'```json\n({.*?})\n```'
+        json_matches = re.findall(json_pattern, text, re.DOTALL) 
+        if json_matches:
+            return json_matches[0]
+        return None
 
-                # Process each JSON block found
-                for json_text in json_matches:
-                    try:
-                        # Parse the JSON content
-                        engel_data = json.loads(json_text)
-                        score = engel_data.get("score", "")
-                        reasoning = engel_data.get("reasoning", "")
+    json_data = extract_json(engel_score_data)
+    if json_data:
+        try:
+            json_data = json_data.replace('\\"', '"')
+            json_data = json.loads(json_data)
+            
+            engel_score = json_data['score']
+            reasoning = json_data['reasoning']
+        except Exception as e:
+            print(f"Error parsing JSON in file: {engel_score_file}")
+            print(e)
+            engel_score = None
+            reasoning = None
+    else:
+        engel_score = None
+        reasoning = None
+    
+    # check if the engel score is a list or string. if it is list convert to str
+    if isinstance(engel_score, list):
+        engel_score = ' '.join(engel_score)
+    
+    new_row = pd.DataFrame([{'clinical_note': preprocessed_note, 'engel_score': engel_score, 'reasoning': reasoning}])
+    df = pd.concat([df, new_row], ignore_index=True)
 
-                        # Write to CSV
-                        writer.writerow({
-                            'clinical_note': clinical_note_text,
-                            'engel_score': score,
-                            'reasoning': reasoning
-                        })
+else:
+    print(f"No JSON pattern found in file: {engel_score_file}")
+    # check if the engel score is a list or string. if it is list convert to str
+    if isinstance(engel_score, list):
+        engel_score = ' '.join(engel_score)
+    
 
-                    except json.JSONDecodeError as e:
-                        print(f"Error decoding JSON in file {engel_score_filename}: {e}")
+# Save dataframe to CSV
+df.to_csv(output_csv, index=False)
 
-print("CSV file created successfully.")
+    
+
+
+
+
+
