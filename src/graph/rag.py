@@ -78,6 +78,7 @@ def retrieve_knowledge_graph_context(entity_names, limit_per_entity=5):
         return []
 
 def prepare_input_for_gemini(clinical_notes, entity_names, knowledge_graph_data):
+    
     """
     Prepares the input for the Gemini API by combining clinical notes and knowledge graph context.
     
@@ -97,18 +98,9 @@ def prepare_input_for_gemini(clinical_notes, entity_names, knowledge_graph_data)
     entities_text = ", ".join(entity_names)
     
     prompt = f"""
-**Raw Clinical Notes**:
-{clinical_notes}
+    Please review the clinical note provided below and assess the patient using the Engel Outcome Scale criteria listed afterward. Assign an Engel score (number and letter) to the patient, even if certain aspects of the criteria are unclear or missing. For this task, ignore whether or not the patient is post-surgery. If and only if there are multiple possible scores with valid reasoning, provide all possible scores and their reasoning as a list.
 
-**Extracted Clinical Entities**: {entities_text}
-
-**Context from Knowledge Graph**:
-{context_text}
-
-Based on this information, predict the Engel score for this patient and provide reasoning for your prediction.
-
-Engel Score Classification:
-
+**Engel Outcome Scale**
 Class I: Free of disabling seizures
 IA: Completely seizure-free since surgery
 IB: Non-disabling simple partial seizures only since surgery
@@ -129,40 +121,31 @@ Class IV: No worthwhile improvement
 IVA: Significant seizure reduction
 IVB: No appreciable change
 IVC: Seizures worse
+
+**Raw Clinical Note**:
+{clinical_notes}
+
+**Extracted Clinical Entities**: {entities_text}
+
+**Context from Knowledge Graph**:
+{context_text}
+
+**Output Requirements:**
+1. **Engel Score**: Provide the score as a number and letter (e.g., "1A").
+2. **Reasoning**: Write a thorough explanation for the chosen score, detailing the clinical reasoning behind your decision.
+3. **Variations** If and only if there are multiple possible scores with valid reasoning, provide all possible scores and their reasoning as a list.
+
+Return the results in JSON format, structured as follows:
+```json
+{{
+  "score": "<Engel Score>",
+  "reasoning": "<Detailed clinical reasoning>"
+}}
 """
     logger.debug(f"Prepared Prompt: {prompt}")
     return prompt
 
-def call_fine_tuned_model(input_text, api_key):
-    """
-    Calls the fine-tuned Gemini model to get Engel score and explanation.
-    
-    :param input_text: The formatted input for the fine-tuned model.
-    :param api_key: API key for authentication.
-    :return: Response from the fine-tuned model.
-    """
-    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json"
-    }
-
-    data = {
-        "prompt": input_text,
-        "max_tokens": 500  # Adjust based on your requirements
-    }
-
-    try:
-        response = requests.post(url, headers=headers, json=data, timeout=60)
-        response.raise_for_status()  # Raises HTTPError for bad responses (4XX or 5XX)
-        logger.info("Successfully received response from Gemini API.")
-        logger.debug(f"Gemini API Response: {response.json()}")
-        return response.json()
-    except requests.exceptions.RequestException as e:
-        logger.error(f"API request failed: {e}")
-        return {}
-
-def engel_score_pipeline(clinical_notes, api_key, limit=5):
+def engel_score_pipeline(clinical_note, limit=5):
     """
     Pipeline to predict Engel score based on clinical notes and knowledge graph context.
     
@@ -171,7 +154,8 @@ def engel_score_pipeline(clinical_notes, api_key, limit=5):
     :param limit: Maximum number of relationships to retrieve per entity.
     :return: Predicted Engel score and explanation.
     """
-    clinical_entities = execute_ner(clinical_notes)
+    
+    clinical_entities = execute_ner(clinical_note)
     logger.info(f"Extracted entities: {clinical_entities}")
     
     entity_names = extract_entity_names(clinical_entities)
@@ -182,40 +166,5 @@ def engel_score_pipeline(clinical_notes, api_key, limit=5):
     if not knowledge_graph_data:
         logger.warning("No knowledge graph data retrieved. Proceeding without additional context.")
     
-    input_prompt = prepare_input_for_gemini(clinical_notes, entity_names, knowledge_graph_data)
-    
-    model_response = call_fine_tuned_model(input_prompt, api_key)
-    
-    if 'choices' in model_response and len(model_response['choices']) > 0:
-        generated_text = model_response['choices'][0].get('text', '').strip()
-        # Assuming the model returns text in the format: "Engel Score: IIA. Reasoning: ..."
-        predicted_engel_score = generated_text
-        logger.info(f"Predicted Engel Score: {predicted_engel_score}")
-    else:
-        predicted_engel_score = 'Not available'
-        logger.warning("No valid response received from Gemini API.")
-    
-    return predicted_engel_score
-
-def prepare_training_data(csv_file):
-    """
-    Loads training data from a CSV file and prepares it for fine-tuning.
-    
-    :param csv_file: Path to the CSV file containing training data.
-    :return: List of training examples.
-    """
-    data = pd.read_csv(csv_file)
-    training_data = []
-    for _, row in data.iterrows():
-        clinical_note = row['clinical_note']
-        engel_score = row['engel_score']
-        reasoning = row['reasoning']
-        
-        prompt = f"Clinical Notes: {clinical_note}\n\nExplain the Engel score prediction."
-        completion = f"Engel Score: {engel_score}. Reasoning: {reasoning}"
-        
-        training_data.append({
-            "prompt": prompt,
-            "completion": completion
-        })
-    return training_data
+    augmented_prompt = prepare_input_for_gemini(clinical_note, entity_names, knowledge_graph_data)
+    return augmented_prompt
