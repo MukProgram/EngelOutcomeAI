@@ -10,6 +10,8 @@ neo4j_user = os.getenv('NEO4J_USER')
 neo4j_password = os.getenv('NEO4J_PASSWORD')
 driver = GraphDatabase.driver(neo4j_uri, auth=(neo4j_user, neo4j_password))
 
+logger = logging.getLogger(__name__)
+
 def extract_entity_names(clinical_entities_dict):
     """
     Extracts a list of unique entity names from the clinical_entities dictionary.
@@ -150,7 +152,6 @@ def engel_score_pipeline(clinical_note, limit=5):
     Pipeline to predict Engel score based on clinical notes and knowledge graph context.
     
     :param clinical_notes: Raw clinical notes text.
-    :param api_key: API key for the Gemini model.
     :param limit: Maximum number of relationships to retrieve per entity.
     :return: Predicted Engel score and explanation.
     """
@@ -168,3 +169,4 @@ def engel_score_pipeline(clinical_note, limit=5):
     
     augmented_prompt = prepare_input_for_gemini(clinical_note, entity_names, knowledge_graph_data)
     return augmented_prompt
+
