@@ -25,7 +25,7 @@ def convert_relations(relations: list):
         queries.append((query, params))
     return queries
 
-def execute_query(uri: str, username: str, password: str, queries: list):
+def execute_query(uri: str, username: str, password, queries: list):
     driver = GraphDatabase.driver(uri, auth=(username, password))
     try:
         with driver.session() as session:
@@ -34,7 +34,7 @@ def execute_query(uri: str, username: str, password: str, queries: list):
     finally:
         driver.close()
 
-def upload(uri: str, username: str, password: str, data: dict):
+def upload(uri, username, password, data):
     # Extracting entities and relations from the data
     entity_queries = convert_entities(data["Entities"])
     relation_queries = convert_relations(data["Relations"])
