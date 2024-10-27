@@ -54,11 +54,9 @@ def upload(uri: str, username: str, password: str, data: str):
         except Exception as e:
             raise Exception(f'Error converting data to json: {e}')
 
-    # Create nodes
     node_query, node_params = convert_nodes(data['nodes'])
     execute_query(uri, username, password, node_query, node_params)
 
-    # Create relationships
     rel_query, rel_params = convert_relationships(data['relationships'])
     execute_query(uri, username, password, rel_query, rel_params)
 
