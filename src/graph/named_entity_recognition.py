@@ -8,8 +8,7 @@ import time
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Hardcode your API key here
-# API_KEY = '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'
+
 API_KEY = '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'
 anthropic_client = anthropic.Anthropic(api_key=API_KEY)
 

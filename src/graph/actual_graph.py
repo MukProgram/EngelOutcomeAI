@@ -51,8 +51,8 @@ def build_graph(uri, username, pasword):
     
     # open all of clinical notes, read the file, and process with ner
    
-    count = 101
-    for clinical_note_filename in os.listdir('data/clinical_notes')[103:]:
+    count = 123
+    for clinical_note_filename in os.listdir('data/clinical_notes')[125:]:
       
         # Construct clinical note path
         clinical_note_path = os.path.join('data/clinical_notes', clinical_note_filename)
