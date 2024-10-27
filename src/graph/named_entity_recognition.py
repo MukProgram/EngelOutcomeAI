@@ -3,11 +3,14 @@ import logging
 import anthropic
 from tenacity import retry, wait_random_exponential, stop_after_attempt
 import os
+import re
+import time
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Hardcode your API key here
-API_KEY = os.getenv("ANTHROPIC_API_KEY")
+# API_KEY = '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'
+API_KEY = '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'
 anthropic_client = anthropic.Anthropic(api_key=API_KEY)
 
 # Define the NER labels to be identified, based on your updated schema
@@ -29,6 +32,8 @@ def system_message(entity_labels, relation_labels):
 You are an expert in Natural Language Processing. Your task is to identify Named Entities (NER) and relations in a given text.
 The possible Named Entities (NER) types are: ({", ".join(entity_labels)}).
 The possible relations are: ({", ".join(relation_labels)}).
+A relation is a directed edge between two entities. For example, "HAS" is a relation between a PATIENT and a epilepsy. and LEADS_TO is a relation between  a seizure and brain damage. 
+Make sure to generate many relations as possible from the text.
 """
 
 def assistant_message():
@@ -43,7 +48,7 @@ EXAMPLE:
         "SeizureOnset": ["began in childhood", "reappeared five years ago"],
         "SeizureRelatedInjuries": ["injured herself", "bit her tongue"],
         "MedicationHistory": ["sodium valproate", "levetiracetam"],
-        "Patient": ["She"]
+        "Patient": ["Patient"]
     }},
     "Relations": [
         {{"type": "HAS", "source": "She", "target": "probable generalized epilepsy"}},
@@ -60,7 +65,7 @@ TASK:
 """
 
 # Chat Completion with Claude
-@retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(5))
+
 def get_entities_relations(entity_labels, relation_labels, text):
     # Build the prompt
     prompt = (
@@ -81,30 +86,18 @@ def get_entities_relations(entity_labels, relation_labels, text):
     )
 
     response_text = response.completion.strip()
-    logging.info(f"Assistant's response: {response_text}")
+    
+    # Parse the json response within response_text into a dict
+    matches = re.search(r'\{.*\}', response_text, re.DOTALL)
+    # convert match object to string then dict
+    response_text = json.loads(matches.group())
+    if 'Patient' in response_text['Entities'] != ['Patient']:
+        response_text['Entities']['Patient'] = ['Patient']
 
-    # Attempt to parse the response as JSON
-    try:
-        function_args = json.loads(response_text)
-    except json.JSONDecodeError:
-        # If parsing fails, try to extract the JSON from the response
-        import re
-        json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
-        if json_match:
-            json_str = json_match.group(0)
-            try:
-                function_args = json.loads(json_str)
-            except json.JSONDecodeError as e2:
-                logging.error(f"Failed to parse extracted JSON: {e2}")
-                function_args = None
-        else:
-            logging.error("No JSON object found in assistant's response.")
-            function_args = None
+    return response_text
 
-    if function_args is not None:
-        function_response = function_args
-    else:
-        function_response = None
 
-    return {"model_response": response, "function_response": function_response}
-
+def execute_ner(text):
+    # Get the entities and relations from the text
+    response = get_entities_relations(entity_labels, relation_labels, text)
+    return response

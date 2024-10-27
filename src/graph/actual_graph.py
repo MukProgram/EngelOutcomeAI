@@ -1,4 +1,7 @@
 from neo4j import GraphDatabase
+from named_entity_recognition import execute_ner
+import os
+import time 
 
 def convert_entities(entities: dict):
     queries = []
@@ -35,6 +38,7 @@ def execute_query(uri: str, username: str, password: str, queries: list):
         driver.close()
 
 def upload(uri: str, username: str, password: str, data: dict):
+    
     # Extracting entities and relations from the data
     entity_queries = convert_entities(data["Entities"])
     relation_queries = convert_relations(data["Relations"])
@@ -43,26 +47,36 @@ def upload(uri: str, username: str, password: str, data: dict):
     execute_query(uri, username, password, entity_queries)
     execute_query(uri, username, password, relation_queries)
 
-if __name__ == "__main__":
-    data = {
-        "Entities": {
-            "PastDiagnoses": ["probable generalized epilepsy"],
-            "Age": ["50-year-old"],
-            "FrequencyOfSeizures": ["every two months"],
-            "SeizureOnset": ["began in childhood", "reappeared five years ago"],
-            "SeizureRelatedInjuries": ["injured herself", "bit her tongue"],
-            "MedicationHistory": ["sodium valproate", "levetiracetam"],
-            "Patient": ["She"]
-        },
-        "Relations": [
-            {"type": "HAS", "source": "She", "target": "probable generalized epilepsy"},
-            {"type": "EXPERIENCES", "source": "She", "target": "bit her tongue"},
-            {"type": "LEADS_TO", "source": "began in childhood", "target": "probable generalized epilepsy"}
-        ]
-    }
+def build_graph(uri, username, pasword):
+    
+    # open all of clinical notes, read the file, and process with ner
+   
+    count = 101
+    for clinical_note_filename in os.listdir('data/clinical_notes')[103:]:
+      
+        # Construct clinical note path
+        clinical_note_path = os.path.join('data/clinical_notes', clinical_note_filename)
 
-    uri = "neo4j+s://a3ccaeb7.databases.neo4j.io"
-    username = "neo4j"
-    password = "TzR6rQkvmPBm25_LJcd9AIclvx4sgH4z9mKqfbQVqXI"
+        # Read the clinical note text
+        with open(clinical_note_path, 'r') as clinical_note_file:
+            clinical_note_text = clinical_note_file.read()
+            
+            # Execute NER on the clinical note text
 
-    upload(uri, username, password, data)
+            ner = execute_ner(clinical_note_text)
+            
+            upload(uri, username, password, ner)
+            
+            print(f"Graph created for {clinical_note_filename}")
+            print(f"Processed {count} files")
+            count += 1
+            time.sleep(14)
+    
+        
+
+
+uri = "neo4j+s://a3ccaeb7.databases.neo4j.io"
+username = "neo4j"
+password = "TzR6rQkvmPBm25_LJcd9AIclvx4sgH4z9mKqfbQVqXI"
+
+build_graph(uri, username, password)
