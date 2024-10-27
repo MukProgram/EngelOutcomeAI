@@ -1,85 +1,155 @@
+import os
 import requests
 import pandas as pd
 from neo4j import GraphDatabase
 import logging
 
-# api key gemni: AIzaSyCwPO_wC8UjEgYa8Y_SW_rkqkGv6e58uf0
+# Import your NER function
+from named_entity_recognition import execute_ner  # Ensure this is correctly imported
 
-logging.basicConfig(level=logging.DEBUG)
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)  # Set to DEBUG for detailed logs
+logger = logging.getLogger(__name__)
 
 # Neo4j configuration
 neo4j_uri = "neo4j+s://a3ccaeb7.databases.neo4j.io"
 neo4j_user = "neo4j"
 neo4j_password = "TzR6rQkvmPBm25_LJcd9AIclvx4sgH4z9mKqfbQVqXI"
 
+# Initialize Neo4j driver
 driver = GraphDatabase.driver(neo4j_uri, auth=(neo4j_user, neo4j_password))
 
-def retrieve_knowledge_graph_context(clinical_entities):
+def extract_entity_names(clinical_entities_dict):
     """
-    Queries the knowledge graph to find related data based on clinical entities.
-    :param clinical_entities: List of entities to search in the knowledge graph.
+    Extracts a list of unique entity names from the clinical_entities dictionary.
+    
+    :param clinical_entities_dict: Dictionary containing entity types and their corresponding entities.
+    :return: List of unique entity names.
+    """
+    entity_names = []
+    entities = clinical_entities_dict.get("Entities", {})
+    for entity_type, entities_list in entities.items():
+        entity_names.extend(entities_list)
+    unique_entity_names = list(set(entity_names))
+    return unique_entity_names
+
+def retrieve_knowledge_graph_context(entity_names, limit_per_entity=5):
+    """
+    Queries the knowledge graph to find related entities based on a list of entity names.
+    
+    :param entity_names: List of entity names to search in the knowledge graph.
+    :param limit_per_entity: Maximum number of relationships to retrieve per entity.
     :return: List of retrieved data.
     """
+    if not entity_names:
+        logger.warning("No entity names provided for knowledge graph retrieval.")
+        return []
+    
     query = """
     MATCH (n)-[r]->(m)
-    WHERE ANY(entity IN $clinical_entities WHERE n.name = entity OR m.name = entity)
-    RETURN n.name AS Entity1, type(r) AS Relationship, m.name AS Entity2, r.weight AS Weight
-    ORDER BY Weight DESC LIMIT 3
-
+    WHERE ANY(entity IN $entity_names WHERE 
+        n.name = entity OR m.name = entity)
+    RETURN n.name AS Entity1, 
+           labels(n) AS Entity1Labels, 
+           type(r) AS Relationship, 
+           m.name AS Entity2, 
+           labels(m) AS Entity2Labels
+    ORDER BY Entity1, Relationship
     """
-    with driver.session() as session:
-        result = session.run(query, clinical_entities=clinical_entities)
-        data = [{"Entity1": record["Entity1"], "Relationship": record["Relationship"], "Entity2": record["Entity2"]} for record in result]
-        return data
+    
+    logger.debug(f"Executing Query: {query}")
+    logger.debug(f"With Parameters: entity_names={entity_names}")
+    
+    try:
+        with driver.session() as session:
+            result = session.run(query, entity_names=entity_names)
+            data = []
+            from collections import defaultdict
+            relationships_per_entity = defaultdict(int)
+            
+            for record in result:
+                entity = record["Entity1"]
+                if relationships_per_entity[entity] < limit_per_entity:
+                    data.append({
+                        "Entity1": record["Entity1"],
+                        "Entity1Labels": record["Entity1Labels"],
+                        "Relationship": record["Relationship"],
+                        "Entity2": record["Entity2"],
+                        "Entity2Labels": record["Entity2Labels"]
+                    })
+                    relationships_per_entity[entity] += 1
+            
+            logger.info(f"Retrieved {len(data)} related entries from the knowledge graph.")
+            logger.info(f"Knowledge Graph Data: {data}")
+            return data
+    except Exception as e:
+        logger.error(f"Error querying knowledge graph: {e}")
+        return []
 
-def prepare_input_for_gemini(clinical_ner, knowledge_graph_data):
+def prepare_input_for_gemini(clinical_notes, entity_names, knowledge_graph_data):
     """
-    Prepares the input for the Gemini API.
-    :param clinical_notes: Original clinical notes.
+    Prepares the input for the Gemini API by combining clinical notes and knowledge graph context.
+    
+    :param clinical_notes: Raw clinical notes text.
+    :param entity_names: List of extracted entity names.
     :param knowledge_graph_data: Retrieved knowledge graph context.
     :return: Formatted prompt for Gemini.
     """
-    context_text = " ".join([f"{data['Entity1']} ({data['Relationship']}) {data['Entity2']}" for data in knowledge_graph_data])
+    # Format knowledge graph data into context text
+    context_text = "\n".join([
+        f"{data['Entity1']} ({data['Relationship']}) {data['Entity2']} [Label1: {', '.join(data['Entity1Labels']), ', '.join(data['Entity2Labels'])}]"
+        for data in knowledge_graph_data
+    ])
+    
+    # Format clinical entities for better readability
+    entities_text = ", ".join(entity_names)
+    
     prompt = f"""
-    Clinical Notes: {clinical_ner}
+**Raw Clinical Notes**:
+{clinical_notes}
 
-    Context from Knowledge Graph: {context_text}
+**Extracted Clinical Entities**: {entities_text}
 
-    Based on this information, predict the Engel score and provide reasoning for your prediction.
-    Class I: Free of disabling seizures
+**Context from Knowledge Graph**:
+{context_text}
 
-    IA: Completely seizure-free since surgery
-    IB: Non disabling simple partial seizures only since surgery
-    IC: Some disabling seizures after surgery, but free of disabline seizures for at least 2 years
-    ID: Generalized convulsions with antiepileptic drug withdrawal only
+Based on this information, predict the Engel score for this patient and provide reasoning for your prediction.
 
-    Class II: Rare disabling seizures (“almost seizure-free”)
+Engel Score Classification:
 
-    IIA: Initially free of disabling seizures but has rare seizures now
-    IIB: Rare disabling seizures since surgery
-    IIC: More than rare disabling seiuzres after surgery, but rare seizures for at least 2 years
-    IID: Nocturnal seizures only
+Class I: Free of disabling seizures
+IA: Completely seizure-free since surgery
+IB: Non-disabling simple partial seizures only since surgery
+IC: Some disabling seizures after surgery, but free of disabling seizures for at least 2 years
+ID: Generalized convulsions with antiepileptic drug withdrawal only
 
-    Class III: Worthwhile improvement
+Class II: Rare disabling seizures (“almost seizure-free”)
+IIA: Initially free of disabling seizures but has rare seizures now
+IIB: Rare disabling seizures since surgery
+IIC: More than rare disabling seizures after surgery, but rare seizures for at least 2 years
+IID: Nocturnal seizures only
 
-    IIIA: Worthwhile seiuzre reduction
-    IIIB: Prolonged seiuzre-free intervals amounting to greater than half the follow-up period, but not less than 2 years
-    Class IV: No worthwhile improvement
-    IVA: Significant seizure reduction
-    IVB: No appreciable change
-    IVC: Seizures worse
+Class III: Worthwhile improvement
+IIIA: Worthwhile seizure reduction
+IIIB: Prolonged seizure-free intervals amounting to greater than half the follow-up period, but not less than 2 years
 
-    """
+Class IV: No worthwhile improvement
+IVA: Significant seizure reduction
+IVB: No appreciable change
+IVC: Seizures worse
+"""
+    logger.debug(f"Prepared Prompt: {prompt}")
     return prompt
 
-# ret input text for predictive model
 def call_fine_tuned_model(input_text, api_key):
     """
-    Calls the fine-tuned model to get Engel score and explanation.
+    Calls the fine-tuned Gemini model to get Engel score and explanation.
+    
     :param input_text: The formatted input for the fine-tuned model.
+    :param api_key: API key for authentication.
     :return: Response from the fine-tuned model.
     """
-    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyCwPO_wC8UjEgYa8Y_SW_rkqkGv6e58uf0"  # Replace with your fine-tuned model endpoint
+    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
@@ -90,28 +160,61 @@ def call_fine_tuned_model(input_text, api_key):
         "max_tokens": 500  # Adjust based on your requirements
     }
 
-    response = requests.post(url, headers=headers, json=data)
-    return response.json()
+    try:
+        response = requests.post(url, headers=headers, json=data, timeout=60)
+        response.raise_for_status()  # Raises HTTPError for bad responses (4XX or 5XX)
+        logger.info("Successfully received response from Gemini API.")
+        logger.debug(f"Gemini API Response: {response.json()}")
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        logger.error(f"API request failed: {e}")
+        return {}
 
-def engel_score_pipeline(clinical_notes, api_key):
-    # Step 1: Extract clinical entities from notes
-    clinical_entities = clinical_notes.split()
-
-    # Step 2: Retrieve knowledge graph context
-    knowledge_graph_data = retrieve_knowledge_graph_context(clinical_entities)
+def engel_score_pipeline(clinical_notes, api_key, limit=5):
+    """
+    Pipeline to predict Engel score based on clinical notes and knowledge graph context.
     
-    # Step 3: Prepare input for fine-tuned model
-    input_text = call_fine_tuned_model(clinical_notes, knowledge_graph_data)
+    :param clinical_notes: Raw clinical notes text.
+    :param api_key: API key for the Gemini model.
+    :param limit: Maximum number of relationships to retrieve per entity.
+    :return: Predicted Engel score and explanation.
+    """
+    # Step 1: Extract clinical entities from notes using NER
+    clinical_entities = execute_ner(clinical_notes)
+    logger.info(f"Extracted entities: {clinical_entities}")
     
-    # Step 4: Call fine-tuned model to get Engel score and explanation
-    model_response = call_fine_tuned_model(input_text, api_key)
-    predicted_engel_score = model_response.get('predicted_score', 'Not available')  # Replace with correct key
-    explanation = model_response.get('explanation', 'Not available')  # Replace with correct key
+    # Step 1.1: Extract entity names from the dictionary
+    entity_names = extract_entity_names(clinical_entities)
+    logger.info(f"Entity Names for Querying: {entity_names}")
+    
+    # Step 2: Retrieve knowledge graph context based on extracted entity names
+    knowledge_graph_data = retrieve_knowledge_graph_context(entity_names, limit_per_entity=limit)
+    
+    if not knowledge_graph_data:
+        logger.warning("No knowledge graph data retrieved. Proceeding without additional context.")
+    
+    # Step 3: Prepare input prompt for Gemini API
+    input_prompt = prepare_input_for_gemini(clinical_notes, entity_names, knowledge_graph_data)
+    
+    # Step 4: Call Gemini API to get Engel score and explanation
+    model_response = call_fine_tuned_model(input_prompt, api_key)
+    
+    # Extracting the response (modify based on actual API response structure)
+    if 'choices' in model_response and len(model_response['choices']) > 0:
+        generated_text = model_response['choices'][0].get('text', '').strip()
+        # Assuming the model returns text in the format: "Engel Score: IIA. Reasoning: ..."
+        predicted_engel_score = generated_text
+        logger.info(f"Predicted Engel Score: {predicted_engel_score}")
+    else:
+        predicted_engel_score = 'Not available'
+        logger.warning("No valid response received from Gemini API.")
+    
+    return predicted_engel_score
 
-    return predicted_engel_score, explanation
 def prepare_training_data(csv_file):
     """
     Loads training data from a CSV file and prepares it for fine-tuning.
+    
     :param csv_file: Path to the CSV file containing training data.
     :return: List of training examples.
     """
@@ -123,27 +226,49 @@ def prepare_training_data(csv_file):
         reasoning = row['reasoning']
         
         prompt = f"Clinical Notes: {clinical_note}\n\nExplain the Engel score prediction."
-        completion = f" Engel Score: {engel_score}. Reasoning: {reasoning}"
+        completion = f"Engel Score: {engel_score}. Reasoning: {reasoning}"
         
         training_data.append({
             "prompt": prompt,
             "completion": completion
         })
     return training_data
-# Replace with your actual API key
 
-if __name__ == "__main__":
-    # Prepare the training data from the CSV file
-    training_data = prepare_training_data('data/engel_scores_output.csv')
 
-    # Fine-tune the Gemini model using the prepared training data
-    # Assuming you have a function to fine-tune the model with training data
-    # fine_tune_model(training_data)
 
-    # Replace with your actual API key
-    API_KEY = "AIzaSyCwPO_wC8UjEgYa8Y_SW_rkqkGv6e58uf0"
+clinical_notes = """
+Clinic date: 21st May 2013
+Dear Dr Xxxx
 
-    # Example clinical notes
-    clinical_notes = "Patient experiences frequent focal seizures, underwent temporal lobectomy, and has shown reduced seizure frequency post-surgery."
-    engel_score_output = engel_score_pipeline(clinical_notes, API_KEY)
-    print("Predicted Engel Score and Explanation:", engel_score_output)
+Re: John Jones    dob:  01.06.1996, NHS No. 000 000 0000
+1 Old Road  Old Town XX1 1XX 
+Diagnosis: Complex partial seizures with secondary generalised tonic clonic seizures
+Medication: Sodium Valproate 700mg in the morning and 800mg nocte
+
+John’s epilepsy started at the age of 4. He suffered with generalised tonic clonic seizures, which were well controlled on Sodium Valproate. In the last 2 years he developed some minor seizures. He says he feels dizzy at the start, followed by a slight headache and nausea. He has been told that during the episodes he is unresponsive and that his hands may shake slightly. The episodes last no longer than 3 minutes and occur 4 to 5 times a year.
+His EEG in 2010 was abnormal, with sharp wave activity in the left anterior region. His MRI is normal.
+He had a normal birth. There is no history of febrile seizures, head injury or brain infections, and no family history of epilepsy.
+I am not keen to increase his dose of Sodium Valproate as there are some concerns regarding his weight. We had a long discussion about this, and Yyyy feels that now since he is more active he can control his weight better. 
+I suggest that the dose should be increased by 100mg so that he is on Sodium Valproate 800mg bd. I will review him once again in my clinic, following which, assuming there are no other major issues, he will be followed up in our specialist nurse-led clinic. 
+Yours sincerely
+"""
+
+# Retrieve the Gemini API key from environment variables
+gemini_api_key = 'AIzaSyCwPO_wC8UjEgYa8Y_SW_rkqkGv6e58uf0'
+if not gemini_api_key:
+    logger.error("Gemini API key not found. Please set the GEMINI_API_KEY environment variable.")
+    exit(1)
+
+# Execute NER to extract clinical entities
+clinical_entities = execute_ner(clinical_notes)
+
+
+# Extract entity names from the dictionary
+entity_names = extract_entity_names(clinical_entities)
+logger.info(f"Entity Names for Querying: {entity_names}")
+
+# Run the retrieval mechanism to get related entities from the knowledge graph
+knowledge_graph_data = retrieve_knowledge_graph_context(entity_names, limit_per_entity=5)
+
+res = prepare_input_for_gemini(clinical_notes, entity_names, knowledge_graph_data)
+print(res)
