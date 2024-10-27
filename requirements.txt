@@ -8,3 +8,4 @@ scispacy
 negspacy
 nltk
 num2words                 
+streamlit
