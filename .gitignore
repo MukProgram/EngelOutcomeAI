@@ -6,3 +6,6 @@ venv
 env
 myenv/
 .vscode/
+
+
+__pycache__/

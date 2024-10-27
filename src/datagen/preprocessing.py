@@ -334,10 +334,6 @@ for note_file in os.listdir(clinical_notes_dir):
     if isinstance(engel_score, list):
         engel_score = ' '.join(engel_score)
     
-        
-    
-
-    
     new_row = pd.DataFrame([{'clinical_note': preprocessed_note, 'engel_score': engel_score, 'reasoning': reasoning}])
     df = pd.concat([df, new_row], ignore_index=True)
 
