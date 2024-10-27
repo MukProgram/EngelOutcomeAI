@@ -1,9 +1,11 @@
-import random
-import torch
-import torch.nn as nn
-import torch.optim as optim
 import requests
+import pandas as pd
 from neo4j import GraphDatabase
+import logging
+
+# api key gemni: AIzaSyCwPO_wC8UjEgYa8Y_SW_rkqkGv6e58uf0
+
+logging.basicConfig(level=logging.DEBUG)
 
 # Neo4j configuration
 neo4j_uri = "neo4j+s://a3ccaeb7.databases.neo4j.io"
@@ -69,85 +71,77 @@ def prepare_input_for_gemini(clinical_ner, knowledge_graph_data):
     return prompt
 
 # ret input text for predictive model
-def call_gemini_api(prompt):
+def call_fine_tuned_model(input_text, api_key):
     """
-    Calls the Gemini API to get Engel score and explanation.
-    :param prompt: The input prompt for the Gemini API.
-    :return: Response from the Gemini API.
+    Calls the fine-tuned model to get Engel score and explanation.
+    :param input_text: The formatted input for the fine-tuned model.
+    :return: Response from the fine-tuned model.
     """
-    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=YAIzaSyDHWaeH-sr83M36jjfFDtG0rK7iS14V1C0"  # Replace with the actual Gemini API endpoint
+    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyCwPO_wC8UjEgYa8Y_SW_rkqkGv6e58uf0"  # Replace with your fine-tuned model endpoint
     headers = {
-        "Authorization": "AIzaSyDHWaeH-sr83M36jjfFDtG0rK7iS14V1C0",  # Replace with your Gemini API key
+        "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
     }
 
     data = {
-        "prompt": prompt,
+        "prompt": input_text,
         "max_tokens": 500  # Adjust based on your requirements
     }
 
     response = requests.post(url, headers=headers, json=data)
     return response.json()
 
-class RAGModel(nn.Module):
-    def __init__(self, embedding_dim):
-        super(RAGModel, self).__init__()
-        self.embedding = nn.EmbeddingBag(1000, embedding_dim)  # Adjust based on vocab size
-        self.fc = nn.Linear(embedding_dim, 1)  # Output layer for Engel score prediction
-
-    def forward(self, clinical_notes):
-        embedded = self.embedding(clinical_notes)
-        score = self.fc(embedded)
-        return score
-
-criterion = nn.MSELoss()  # Mean Squared Error loss for regression
-
-def train_model(model, data, optimizer, epochs):
-    """
-    Trains the RAG model using synthetic data.
-    :param model: The RAG model to train.
-    :param data: Synthetic data containing clinical notes and Engel scores.
-    :param optimizer: Optimizer for updating model weights.
-    :param epochs: Number of training epochs.
-    """
-    model.train()  # Set the model to training mode
-    for epoch in range(epochs):
-        for clinical_note, engel_score, _ in data:
-            optimizer.zero_grad()  # Zero the gradients
-            input_tensor = torch.tensor([hash(clinical_note) % 1000])  # Example input encoding
-            target_tensor = torch.tensor([engel_score], dtype=torch.float32)  # Target Engel score
-            output = model(input_tensor)  # Forward pass
-            loss = criterion(output, target_tensor)  # Calculate loss
-            loss.backward()  # Backward pass
-            optimizer.step()  # Update weights
-
-        print(f"Epoch {epoch+1}/{epochs}, Loss: {loss.item()}")
-
-def engel_score_pipeline(clinical_notes, train=False, model=None, synthetic_data=None):
+def engel_score_pipeline(clinical_notes, api_key):
     # Step 1: Extract clinical entities from notes
     clinical_entities = clinical_notes.split()
 
     # Step 2: Retrieve knowledge graph context
     knowledge_graph_data = retrieve_knowledge_graph_context(clinical_entities)
-
-    # Step 3: Prepare input for Gemini API
-    prompt = prepare_input_for_gemini(clinical_notes, knowledge_graph_data)
-
-    # Step 4: Call Gemini API to get Engel score and explanation
-    gemini_response = call_gemini_api(prompt)
-    predicted_engel_score = gemini_response['score']  # Adjust based on actual response structure
-    explanation = gemini_response['explanation']  # Adjust based on actual response structure
-
-    if train and model is not None and synthetic_data is not None:
-        # Train the model using synthetic data
-        optimizer = optim.Adam(model.parameters(), lr=0.001)
-        train_model(model, synthetic_data, optimizer, epochs=5)
+    
+    # Step 3: Prepare input for fine-tuned model
+    input_text = call_fine_tuned_model(clinical_notes, knowledge_graph_data)
+    
+    # Step 4: Call fine-tuned model to get Engel score and explanation
+    model_response = call_fine_tuned_model(input_text, api_key)
+    predicted_engel_score = model_response.get('predicted_score', 'Not available')  # Replace with correct key
+    explanation = model_response.get('explanation', 'Not available')  # Replace with correct key
 
     return predicted_engel_score, explanation
+def prepare_training_data(csv_file):
+    """
+    Loads training data from a CSV file and prepares it for fine-tuning.
+    :param csv_file: Path to the CSV file containing training data.
+    :return: List of training examples.
+    """
+    data = pd.read_csv(csv_file)
+    training_data = []
+    for _, row in data.iterrows():
+        clinical_note = row['clinical_note']
+        engel_score = row['engel_score']
+        reasoning = row['reasoning']
+        
+        prompt = f"Clinical Notes: {clinical_note}\n\nExplain the Engel score prediction."
+        completion = f" Engel Score: {engel_score}. Reasoning: {reasoning}"
+        
+        training_data.append({
+            "prompt": prompt,
+            "completion": completion
+        })
+    return training_data
+# Replace with your actual API key
 
-# Example of training the model
-synthetic_data = generate_synthetic_data(100)  # Generate 100 synthetic samples
-rag_model = RAGModel(embedding_dim=64)  # Initialize model
-clinical_notes = "Patient experiences frequent focal seizures, underwent temporal lobectomy, and has shown reduced seizure frequency post-surgery."
-engel_score_output = engel_score_pipeline(clinical_notes, train=True, model=rag_model, synthetic_data=synthetic_data)
-print("Predicted Engel Score and Explanation:", engel_score_output)
+if __name__ == "__main__":
+    # Prepare the training data from the CSV file
+    training_data = prepare_training_data('data/engel_scores_output.csv')
+
+    # Fine-tune the Gemini model using the prepared training data
+    # Assuming you have a function to fine-tune the model with training data
+    # fine_tune_model(training_data)
+
+    # Replace with your actual API key
+    API_KEY = "AIzaSyCwPO_wC8UjEgYa8Y_SW_rkqkGv6e58uf0"
+
+    # Example clinical notes
+    clinical_notes = "Patient experiences frequent focal seizures, underwent temporal lobectomy, and has shown reduced seizure frequency post-surgery."
+    engel_score_output = engel_score_pipeline(clinical_notes, API_KEY)
+    print("Predicted Engel Score and Explanation:", engel_score_output)

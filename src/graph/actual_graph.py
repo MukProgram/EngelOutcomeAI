@@ -28,7 +28,7 @@ def convert_relations(relations: list):
         queries.append((query, params))
     return queries
 
-def execute_query(uri: str, username: str, password: str, queries: list):
+def execute_query(uri: str, username: str, password, queries: list):
     driver = GraphDatabase.driver(uri, auth=(username, password))
     try:
         with driver.session() as session:
