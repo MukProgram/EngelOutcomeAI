@@ -40,9 +40,9 @@ def prepare_input_for_gemini(clinical_ner, knowledge_graph_data):
     context_text = " ".join([f"{data['Entity1']} ({data['Relationship']}) {data['Entity2']}" for data in knowledge_graph_data])
     prompt = f"""
     Clinical Notes: {clinical_ner}
-    
+
     Context from Knowledge Graph: {context_text}
-    
+
     Based on this information, predict the Engel score and provide reasoning for your prediction.
     Class I: Free of disabling seizures
 
@@ -66,7 +66,7 @@ def prepare_input_for_gemini(clinical_ner, knowledge_graph_data):
     IVA: Significant seizure reduction
     IVB: No appreciable change
     IVC: Seizures worse
-    
+
     """
     return prompt
 
@@ -82,18 +82,19 @@ def call_fine_tuned_model(input_text, api_key):
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
     }
+
     data = {
         "prompt": input_text,
         "max_tokens": 500  # Adjust based on your requirements
     }
-    
+
     response = requests.post(url, headers=headers, json=data)
     return response.json()
 
 def engel_score_pipeline(clinical_notes, api_key):
     # Step 1: Extract clinical entities from notes
     clinical_entities = clinical_notes.split()
-    
+
     # Step 2: Retrieve knowledge graph context
     knowledge_graph_data = retrieve_knowledge_graph_context(clinical_entities)
     
