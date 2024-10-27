@@ -1,6 +1,8 @@
 import streamlit as st
 import time
 
+st.set_page_config(layout="wide")
+
 # Function to animate text appearing word by word
 def display_text_animated(text, delay=0.05):
     words = text.split()
@@ -16,47 +18,77 @@ def display_text_animated(text, delay=0.05):
 st.sidebar.title("Example")
 st.sidebar.write("Download these example patient files to generate an example Engel score")
 
-example_files = {
-    "example1.txt": "some content",
-    "example2.txt": "some content",
-    "example3.txt": "some content"
-}
 
-for filename, content in example_files.items():
-    if st.sidebar.button(f"Download {filename}"):
-        st.session_state[filename] = content
+file_content_1 = ""
+with open("data/clinical_notes/EA0001.txt", 'r') as file:  # Open the file in read mode_
+    file_content_1 = file.read()      # Read the entire file content
+  
+
+st.sidebar.download_button(
+    label="Sample Clinical Note Text 1",
+    data=file_content_1,
+    file_name="clinical_note_example_1.txt",
+    mime="text/plain"
+)
+
+file_content_2 = ""
+with open("data/clinical_notes/EA0002.txt", 'r') as file:  # Open the file in read mode_
+    file_content_2 = file.read()      # Read the entire file content
+
+st.sidebar.download_button(
+    label="Sample Clinical Note Text 2",
+    data=file_content_2,
+    file_name="clinical_note_example_2.txt",
+    mime="text/plain"
+)
+
+file_content_3 = ""
+with open("data/clinical_notes/EA0003.txt", 'r') as file:  # Open the file in read mode_
+    file_content_3 = file.read()      # Read the entire file content
+
+st.sidebar.download_button(
+    label="Sample Clinical Note Text 3",
+    data=file_content_3,
+    file_name="clinical_note_example_3.txt",
+    mime="text/plain"
+)
 
 st.sidebar.title("Upload Patient Notes")
-uploaded_file = st.sidebar.file_uploader("Drag and drop your patient notes", type="txt", accept_multiple_files=True)
+uploaded_file = st.sidebar.file_uploader("Drag and drop your patient notes", type="txt")
 
-st.title("Predicted Engel Score")
+col1, col2 = st.columns([3, 2]) 
+with col1:
+    st.title("Predicted Engel Score")
 
-if 'score_generated' not in st.session_state:
-    st.session_state['score_generated'] = False
+    if 'score_generated' not in st.session_state:
+        st.session_state['score_generated'] = False
 
-if uploaded_file:
-    if not st.session_state['score_generated']:
-        with st.spinner('Generating...'):
-            time.sleep(5)  # Simulate generation delay
+    if uploaded_file:
+        if not st.session_state['score_generated']:
+            with st.spinner('Generating...'):
+                time.sleep(5)  # Simulate generation delay
 
-        # Example score calculation (replace with actual calculation logic)
+            # Example score calculation (replace with actual calculation logic)
         st.metric("Engel Score", 5)
         st.session_state['score_generated'] = True  # Set flag to avoid re-generating
 
-    st.write("---")
-    st.subheader("Explanation of the Prediction")
+        st.write("---")
+        st.subheader("Explanation of the Prediction")
 
-    # Explanation text
-    explanation_text = "The reason we have this Engel score is due to various factors including the patient's medical history and symptoms."
+        # Explanation text
+        explanation_text = "The reason we have this Engel score is due to various factors including the patient's medical history and symptoms."
 
-    # Button to trigger explanation animation
-    if st.button("Show Explanation"):
-        display_text_animated(explanation_text)
+        # Button to trigger explanation animation
+        if st.button("Show Explanation"):
+            display_text_animated(explanation_text)
 
-else:
-    st.write("Please upload a file to view the Engel Score")
-
-
+    else:
+        st.write("Please upload a file to view the Engel Score")
+with col2:
+    if uploaded_file:
+        st.subheader("Clinic Note Display")
+        file_contents = uploaded_file.read().decode("utf-8")
+        st.write(file_contents)
 
 # Hide Streamlit style
 hide_streamlit_style = """
@@ -82,7 +114,7 @@ hide_streamlit_style = """
                 }
                 header {
                 visibility: hidden;
-                height: 0%;
+                height: 20%;
                 }
                 footer {
                 visibility: hidden;
@@ -102,6 +134,18 @@ st.markdown(
 
     section[data-testid="stSidebar"] {
         background-color: #bacdf2;
+    }
+
+    div.stDownloadButton > button {
+        color: #ffffff;
+        background-color: #0072B2;
+        border-radius: 5px;
+        padding: .5em 1em;
+    }
+
+    div.stDownloadButton > button:hover {
+        background-color: #005282;
+        border-color: black;
     }
 
     div.stButton > button {
