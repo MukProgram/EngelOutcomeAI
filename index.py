@@ -15,7 +15,7 @@ for filename, content in example_files.items():
 
 
 streamlit.sidebar.title("Upload Patient Notes")
-uploaded_file = streamlit.sidebar.file_uploader("Drag and drop your patients notes", type="txt")
+uploaded_file = streamlit.sidebar.file_uploader("Drag and drop your patients notes", type="txt", accept_multiple_files=True)
 
 streamlit.title("Predicted Engel Score")
 
