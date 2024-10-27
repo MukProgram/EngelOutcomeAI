@@ -6,11 +6,9 @@ import os
 import re
 import time
 
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-
-API_KEY = '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'
-anthropic_client = anthropic.Anthropic(api_key=API_KEY)
+anthropic_client = anthropic.Anthropic(api_key=os.getenv('ANTHROPIC_API_KEY'))
 
 # Define the NER labels to be identified, based on your updated schema
 entity_labels = [
@@ -25,7 +23,7 @@ relation_labels = [
     "IMPROVES", "WORSENS", "UNDERGOES", "LEADS_TO"
 ]
 
-# Prepare messages
+# Prepare system query 
 def system_message(entity_labels, relation_labels):
     return f"""
 You are an expert in Natural Language Processing. Your task is to identify Named Entities (NER) and relations in a given text.
@@ -35,6 +33,7 @@ A relation is a directed edge between two entities. For example, "HAS" is a rela
 Make sure to generate many relations as possible from the text.
 """
 
+# Prepare structure
 def assistant_message():
     return f"""
 EXAMPLE:
@@ -63,8 +62,7 @@ TASK:
     Text: {text}
 """
 
-# Chat Completion with Claude
-
+# NER Core function
 def get_entities_relations(entity_labels, relation_labels, text):
     # Build the prompt
     prompt = (
@@ -88,6 +86,7 @@ def get_entities_relations(entity_labels, relation_labels, text):
     
     # Parse the json response within response_text into a dict
     matches = re.search(r'\{.*\}', response_text, re.DOTALL)
+    
     # convert match object to string then dict
     response_text = json.loads(matches.group())
     if 'Patient' in response_text['Entities'] != ['Patient']:
@@ -95,8 +94,14 @@ def get_entities_relations(entity_labels, relation_labels, text):
 
     return response_text
 
-
 def execute_ner(text):
-    # Get the entities and relations from the text
     response = get_entities_relations(entity_labels, relation_labels, text)
     return response
+
+clinical_note = """
+
+The 50 year old patient has a history of probable generalized epilepsy and experiences generalized seizures every two months. She injured herself and bit her tongue during a seizure episode. Her epilepsy began in childhood but reappeared five years ago. Currently, she is on sodium valproate and levetiracetam.
+
+"""
+
+print(execute_ner(clinical_note))

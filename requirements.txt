@@ -9,3 +9,4 @@ negspacy
 nltk
 num2words                 
 streamlit
+dotenv

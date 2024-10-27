@@ -9,3 +9,6 @@ myenv/
 
 
 __pycache__/
+*.pyc
+
+outputs/

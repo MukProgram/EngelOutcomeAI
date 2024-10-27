@@ -1,8 +1,0 @@
-Based on the information provided, I would assign this patient an Engel score of:
-
-Engel IIB
-
-Explanation:
-Joan has a diagnosis of focal onset epilepsy with olfactory aura. She takes lamotrigine 125mg twice daily for seizure control. Last month, she experienced a cluster of 5 seizures within 2 days, which is unusual for her. Typically her seizures have been relatively well controlled. The plan is to uptitrate her lamotrigine dose gradually to 175mg twice daily. 
-
-Based on the Engel scale criteria, I have assigned Joan a score of IIB. This score is defined as "Rare disabling seizures since surgery." Although Joan has not had surgery, this category best fits her situation of having relatively well-controlled focal onset seizures, with a recent unusual cluster of disabling seizures. The IIB designation indicates she has rare disabling seizures overall in the context of her epilepsy. The recent seizure cluster seems to be an exception from her usual seizure pattern. If she continues to have rare disabling seizures despite medication adjustments, the IIB score would still apply. I chose IIB over other Class II designations because she does not have nocturnal seizures only (IID) and there is no clear timeframe specified for when she initially became seizure-free post-treatment (IIA). Please let me know if you need any clarification or have additional questions!

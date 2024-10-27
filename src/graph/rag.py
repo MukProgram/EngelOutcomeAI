@@ -3,20 +3,11 @@ import requests
 import pandas as pd
 from neo4j import GraphDatabase
 import logging
+from named_entity_recognition import execute_ner 
 
-# Import your NER function
-from named_entity_recognition import execute_ner  # Ensure this is correctly imported
-
-# Configure logging
-logging.basicConfig(level=logging.DEBUG)  # Set to DEBUG for detailed logs
-logger = logging.getLogger(__name__)
-
-# Neo4j configuration
-neo4j_uri = "neo4j+s://a3ccaeb7.databases.neo4j.io"
-neo4j_user = "neo4j"
-neo4j_password = "TzR6rQkvmPBm25_LJcd9AIclvx4sgH4z9mKqfbQVqXI"
-
-# Initialize Neo4j driver
+neo4j_uri = os.getenv('NEO4J_URI')
+neo4j_user = os.getenv('NEO4J_USER')
+neo4j_password = os.getenv('NEO4J_PASSWORD')
 driver = GraphDatabase.driver(neo4j_uri, auth=(neo4j_user, neo4j_password))
 
 def extract_entity_names(clinical_entities_dict):
@@ -95,6 +86,7 @@ def prepare_input_for_gemini(clinical_notes, entity_names, knowledge_graph_data)
     :param knowledge_graph_data: Retrieved knowledge graph context.
     :return: Formatted prompt for Gemini.
     """
+    
     # Format knowledge graph data into context text
     context_text = "\n".join([
         f"{data['Entity1']} ({data['Relationship']}) {data['Entity2']} [Label1: {', '.join(data['Entity1Labels']), ', '.join(data['Entity2Labels'])}]"
@@ -179,27 +171,21 @@ def engel_score_pipeline(clinical_notes, api_key, limit=5):
     :param limit: Maximum number of relationships to retrieve per entity.
     :return: Predicted Engel score and explanation.
     """
-    # Step 1: Extract clinical entities from notes using NER
     clinical_entities = execute_ner(clinical_notes)
     logger.info(f"Extracted entities: {clinical_entities}")
     
-    # Step 1.1: Extract entity names from the dictionary
     entity_names = extract_entity_names(clinical_entities)
     logger.info(f"Entity Names for Querying: {entity_names}")
     
-    # Step 2: Retrieve knowledge graph context based on extracted entity names
     knowledge_graph_data = retrieve_knowledge_graph_context(entity_names, limit_per_entity=limit)
     
     if not knowledge_graph_data:
         logger.warning("No knowledge graph data retrieved. Proceeding without additional context.")
     
-    # Step 3: Prepare input prompt for Gemini API
     input_prompt = prepare_input_for_gemini(clinical_notes, entity_names, knowledge_graph_data)
     
-    # Step 4: Call Gemini API to get Engel score and explanation
     model_response = call_fine_tuned_model(input_prompt, api_key)
     
-    # Extracting the response (modify based on actual API response structure)
     if 'choices' in model_response and len(model_response['choices']) > 0:
         generated_text = model_response['choices'][0].get('text', '').strip()
         # Assuming the model returns text in the format: "Engel Score: IIA. Reasoning: ..."
@@ -233,42 +219,3 @@ def prepare_training_data(csv_file):
             "completion": completion
         })
     return training_data
-
-
-
-clinical_notes = """
-Clinic date: 21st May 2013
-Dear Dr Xxxx
-
-Re: John Jones    dob:  01.06.1996, NHS No. 000 000 0000
-1 Old Road  Old Town XX1 1XX 
-Diagnosis: Complex partial seizures with secondary generalised tonic clonic seizures
-Medication: Sodium Valproate 700mg in the morning and 800mg nocte
-
-John’s epilepsy started at the age of 4. He suffered with generalised tonic clonic seizures, which were well controlled on Sodium Valproate. In the last 2 years he developed some minor seizures. He says he feels dizzy at the start, followed by a slight headache and nausea. He has been told that during the episodes he is unresponsive and that his hands may shake slightly. The episodes last no longer than 3 minutes and occur 4 to 5 times a year.
-His EEG in 2010 was abnormal, with sharp wave activity in the left anterior region. His MRI is normal.
-He had a normal birth. There is no history of febrile seizures, head injury or brain infections, and no family history of epilepsy.
-I am not keen to increase his dose of Sodium Valproate as there are some concerns regarding his weight. We had a long discussion about this, and Yyyy feels that now since he is more active he can control his weight better. 
-I suggest that the dose should be increased by 100mg so that he is on Sodium Valproate 800mg bd. I will review him once again in my clinic, following which, assuming there are no other major issues, he will be followed up in our specialist nurse-led clinic. 
-Yours sincerely
-"""
-
-# Retrieve the Gemini API key from environment variables
-gemini_api_key = 'AIzaSyCwPO_wC8UjEgYa8Y_SW_rkqkGv6e58uf0'
-if not gemini_api_key:
-    logger.error("Gemini API key not found. Please set the GEMINI_API_KEY environment variable.")
-    exit(1)
-
-# Execute NER to extract clinical entities
-clinical_entities = execute_ner(clinical_notes)
-
-
-# Extract entity names from the dictionary
-entity_names = extract_entity_names(clinical_entities)
-logger.info(f"Entity Names for Querying: {entity_names}")
-
-# Run the retrieval mechanism to get related entities from the knowledge graph
-knowledge_graph_data = retrieve_knowledge_graph_context(entity_names, limit_per_entity=5)
-
-res = prepare_input_for_gemini(clinical_notes, entity_names, knowledge_graph_data)
-print(res)

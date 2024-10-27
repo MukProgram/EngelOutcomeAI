@@ -3,6 +3,7 @@ from named_entity_recognition import execute_ner
 import os
 import time 
 
+
 def convert_entities(entities: dict):
     queries = []
     for label, entity_list in entities.items():
@@ -47,7 +48,7 @@ def upload(uri: str, username: str, password: str, data: dict):
     execute_query(uri, username, password, entity_queries)
     execute_query(uri, username, password, relation_queries)
 
-def build_graph(uri, username, pasword):
+def build_graph(uri: str, username: str, password: str):
     
     # open all of clinical notes, read the file, and process with ner
    
@@ -71,12 +72,6 @@ def build_graph(uri, username, pasword):
             print(f"Processed {count} files")
             count += 1
             time.sleep(12)
-    
-        
 
-
-uri = "neo4j+s://a3ccaeb7.databases.neo4j.io"
-username = "neo4j"
-password = "TzR6rQkvmPBm25_LJcd9AIclvx4sgH4z9mKqfbQVqXI"
-
-build_graph(uri, username, password)
+# do not run unless you want to re-learn the knowledge graph
+#build_graph(os.getenv(NEO4J_URI), os.getenv(NEO4J_USERNAME), os.getenv(NEO4J_PASSWORD))

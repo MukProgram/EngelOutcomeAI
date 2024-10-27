@@ -1,9 +1,0 @@
-Engel Score: IVC
-
-Explanation: Based on the information provided in the clinical note, Ms. Habley continues to have disabling seizures despite treatment with anti-epileptic medications. Specifically, it states that "Last week she had around 10-15 of these seizures over 2 days." This indicates that she is still having frequent, disabling focal dyscognitive seizures. 
-
-The note also provides some history that Ms. Habley has symptomatic epilepsy due to previous neurocysticercosis, and that she has calcifications on CT scan and an abnormal MRI in the past confirming this. However, her recent MRI in 2011 was normal. She has tried levetiracetam in the past but it caused side effects, and she is currently taking lamotrigine 150mg twice daily. 
-
-Several medication adjustments are proposed, including increasing the lamotrigine dose and potentially adding zonisamide if the increased lamotrigine is not successful. However, there is no indication that Ms. Habley has actually undergone epilepsy surgery.
-
-Based on the Engel criteria, Ms. Habley would be considered Class IV: No worthwhile improvement, and specifically subclass IVC: Seizures worse. This is because she continues to have frequent disabling seizures, requiring medication adjustments, without any period of seizure freedom. There is no evidence of worthwhile seizure reduction or prolonged seizure-free intervals. For these reasons, I assigned an Engel score of IVC.

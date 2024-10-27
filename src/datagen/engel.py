@@ -4,25 +4,14 @@ import time
 import random
 from anthropic import Anthropic
 
-# Set up logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
-# Hardcoded API key (Replace with your actual API key)
-API_KEY = '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'
-if not API_KEY:
-    raise ValueError("Please set the API_KEY variable.")
-
-# Initialize the Anthropic client with the hardcoded API key
-client = Anthropic(api_key=API_KEY)
+client = Anthropic(api_key=os.getenv('ANTHROPIC_API_KEY'))
 
 # Directories for input notes and output files
 input_dir = 'data/clinical_notes'
-output_dir = 'output3.5'
-
-# Create the output directory if it doesn't exist
+output_dir = 'data/'
 os.makedirs(output_dir, exist_ok=True)
-
-# List all clinical note files in the input directory
 note_files = os.listdir(input_dir)
 
 for note_file in note_files:
