@@ -38,9 +38,9 @@ def prepare_input_for_gemini(clinical_notes, knowledge_graph_data):
     context_text = " ".join([f"{data['Entity1']} ({data['Relationship']}) {data['Entity2']}" for data in knowledge_graph_data])
     prompt = f"""
     Clinical Notes: {clinical_notes}
-    
+
     Context from Knowledge Graph: {context_text}
-    
+
     Based on this information, predict the Engel score and provide reasoning for your prediction.
     """
     return prompt
@@ -51,16 +51,17 @@ def call_gemini_api(prompt):
     :param prompt: The input prompt for the Gemini API.
     :return: Response from the Gemini API.
     """
-    url = "https://api.gemini.com/v1/engelscore"  # Replace with the actual Gemini API endpoint
+    GOOGLE_API_KEY = "AIzaSyATlf-H9KJ0rAVqP468v0yyW_kg9GfO6_A"
+    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=$GOOGLE_API_KEY"
     headers = {
-        "Authorization": "Bearer YOUR_GEMINI_API_KEY",  # Replace with your Gemini API key
         "Content-Type": "application/json"
     }
+
     data = {
-        "prompt": prompt,
+        "contents": prompt,
         "max_tokens": 150  # Adjust based on your requirements
     }
-    
+
     response = requests.post(url, headers=headers, json=data)
     return response.json()
 
@@ -115,13 +116,13 @@ def train_model(model, data, optimizer, epochs):
 def engel_score_pipeline(clinical_notes, train=False, model=None, synthetic_data=None):
     # Step 1: Extract clinical entities from notes
     clinical_entities = clinical_notes.split()
-    
+
     # Step 2: Retrieve knowledge graph context
     knowledge_graph_data = retrieve_knowledge_graph_context(clinical_entities)
-    
+
     # Step 3: Prepare input for Gemini API
     prompt = prepare_input_for_gemini(clinical_notes, knowledge_graph_data)
-    
+
     # Step 4: Call Gemini API to get Engel score and explanation
     gemini_response = call_gemini_api(prompt)
     predicted_engel_score = gemini_response['score']  # Adjust based on actual response structure

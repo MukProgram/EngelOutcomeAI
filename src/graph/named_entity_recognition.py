@@ -2,6 +2,7 @@ import json
 import logging
 import anthropic
 from tenacity import retry, wait_random_exponential, stop_after_attempt
+import os
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -12,7 +13,7 @@ anthropic_client = anthropic.Anthropic(api_key=API_KEY)
 # Define the NER labels to be identified, based on your updated schema
 entity_labels = [
     "PastDiagnoses", "SeizureOnset", "SeizureChange", "Symptoms", "ProvocationSeizureAura",
-    "SeizureSeverity", "SeizurePropagation", "SeizurePalliation", "MedicationHistory", 
+    "SeizureSeverity", "SeizurePropagation", "SeizurePalliation", "MedicationHistory",
     "Age", "EpilepsySurgery", "FrequencyOfSeizures", "Patient"
 ]
 
@@ -45,9 +46,9 @@ EXAMPLE:
         "Patient": ["She"]
     }},
     "Relations": [
-        {{"type": "HAS", "source": "Patient", "target": "PastDiagnoses"}},
-        {{"type": "EXPERIENCES", "source": "Patient", "target": "FrequencyOfSeizures"}},
-        {{"type": "LEADS_TO", "source": "SeizureOnset", "target": "SeizureChange"}}
+        {{"type": "HAS", "source": "She", "target": "probable generalized epilepsy"}},
+        {{"type": "EXPERIENCES", "source": "She", "target": "bit her tongue"}},
+        {{"type": "LEADS_TO", "source": "began in childhood", "target": "probably generalized epilepsy"}}
     ]
 }}
 --"""
@@ -106,3 +107,4 @@ def get_entities_relations(entity_labels, relation_labels, text):
         function_response = None
 
     return {"model_response": response, "function_response": function_response}
+
