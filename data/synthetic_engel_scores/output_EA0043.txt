@@ -14,7 +14,7 @@ In summary, the description of around 1 disabling seizure per year, with initial
 
 Here is the output in the requested JSON format:
 
-```json
+```json 
 {
   "score": "IIA",
   "reasoning": "The patient has a history of 4 seizure episodes over the past 4 years, which equates to around 1 seizure per year. This frequency would be considered \"rare\" based on the Engel criteria. The seizures are described as episodes of unconsciousness with tongue biting and post-ictal confusion, indicating they are likely disabling seizures. The patient was initially seizure-free from age 8 months (after a febrile seizure) until the first event at age 15. She then began having rare disabling seizures, meeting criteria for Engel IIA."
