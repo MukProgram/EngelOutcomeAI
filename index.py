@@ -1,5 +1,5 @@
 import streamlit 
-
+import time
 streamlit.sidebar.title("Example")
 streamlit.sidebar.write("Download these example patient files to generate and example engel score")
 
@@ -21,6 +21,8 @@ streamlit.title("Predicted Engel Score")
 
 if uploaded_file:
     # engel_score = calculate_engel_score(uploaded_file)
+    with streamlit.spinner('Generating...'):
+        time.sleep(5)
     streamlit.metric("Engel Score", 5)
     # streamlit.metric("Engel Score", 5, delta="") --> if we want to show a change in engel score
 else:
